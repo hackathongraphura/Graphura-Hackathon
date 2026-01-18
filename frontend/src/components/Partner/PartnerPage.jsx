@@ -1,8 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
-// import heroImage1 from "../../assets/partnerPage/Hero-image-Partners.avif";
-import innovationAndImpact from "../../assets/partnerPage/innovationAndImpact.avif";
+import innovationAndImpact from "../../assets/partnerPage/InnovationAndImpact.avif";
 import collaboration from "../../assets/partnerPage/Collaboration.avif";
 import brandVisibility from "../../assets/partnerPage/BrandVisibility.avif";
 import Navbar from "../Navbar";
