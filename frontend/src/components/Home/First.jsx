@@ -172,54 +172,52 @@ export default function First() {
                   >
       
                     <motion.span
-                      variants={fadeUp}
-                      transition={{ duration: 0.5 }}
-                      className="inline-block mb-4 text-base bg-[#E6F4F1] text-[#03594E] px-5 py-1.5 rounded-full"
-                    >
-                      About Us
-                    </motion.span>
-      
-                    <motion.h2
-                      variants={fadeUp}
-                      transition={{ duration: 0.6 }}
-                      className="text-3xl sm:text-4xl font-bold mb-6 leading-tight"
-                    >
-                      Develop your potential with education that fits your life.
-                    </motion.h2>
-      
-                    <motion.p
-                      variants={fadeUp}
-                      transition={{ duration: 0.6 }}
-                      className="text-[#6C757D] mb-8 max-w-xl text-sm sm:text-base"
-                    >
-                      Sharpen your skill set and fast-track your professional career with
-                      coursework you can take anytime, anywhere. Access expert-led learning
-                      designed to help you succeed from the comfort of your home.
-                    </motion.p>
-      
-                    <ul className="grid sm:grid-cols-2 gap-5">
-                      {[
-                        "Interactive modules",
-                        "Unrestricted training",
-                        "Sector industry-minded individuals",
-                        "On the go research",
-                      ].map((item, i) => (
-                        <motion.li
-                          key={i}
-                          variants={fadeUp}
-                          transition={{ duration: 0.4 }}
-                          className="flex items-center gap-3"
-                        >
-                          <span className="!text-[#F8C62F] font-extrabold text-2xl leading-none">
-                            ✓
-                          </span>
-      
-                          <span className="text-[#0C121D]">{item}</span>
-                        </motion.li>
-                      ))}
-                    </ul>
-      
-                  </motion.div>
+                variants={fadeUp}
+                transition={{ duration: 0.5 }}
+                className="inline-block mb-4 text-base bg-[#E6F4F1] text-[#03594E] px-5 py-1.5 rounded-full"
+              >
+                About Us
+              </motion.span>
+
+              <motion.h2
+                variants={fadeUp}
+                transition={{ duration: 0.6 }}
+                className="text-3xl sm:text-4xl font-bold mb-6 leading-tight"
+              >
+               Unleash your potential in the battlefield of innovation.
+              </motion.h2>
+
+              <motion.p
+                variants={fadeUp}
+                transition={{ duration: 0.6 }}
+                className="text-[#6C757D] mb-8 max-w-xl text-sm sm:text-base"
+              >
+                Graphura India Private Limited presents a high-energy Battlefield Hackathon where innovation meets intense competition. Participants will collaborate, strategize, and build real-world tech solutions under pressure-driven challenges. Step into the arena, showcase your skills, and battle your way to victory in the ultimate innovation battleground.
+              </motion.p>
+
+              <ul className="grid sm:grid-cols-2 gap-5">
+                {[
+                  "Interactive modules",
+                  "Unrestricted training",
+                  "Sector industry-minded individuals",
+                  "On the go research",
+                ].map((item, i) => (
+                  <motion.li
+                    key={i}
+                    variants={fadeUp}
+                    transition={{ duration: 0.4 }}
+                    className="flex items-center gap-3"
+                  >
+                    <span className="!text-[#F8C62F] font-extrabold text-2xl leading-none">
+                      ✓
+                    </span>
+
+                    <span className="text-[#0C121D]">{item}</span>
+                  </motion.li>
+                ))}
+              </ul>
+
+            </motion.div>
       
       
                 </div>

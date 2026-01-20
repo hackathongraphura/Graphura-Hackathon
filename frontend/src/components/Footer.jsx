@@ -466,7 +466,7 @@ const handleSubscribe = async () => {
             href="#"
             className="text-yellow-500 hover:text-yellow-400 font-semibold transition-colors"
           >
-            Ordainit
+            Graphura India Private Limited
           </a>{" "}
           All Rights Reserved
         </p>

@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
 const statsData = [
-  { value: 1090, label: "Our Online Courses", icon: "/1.svg" },
-  { value: 120, label: "Our Instructors", icon: "/2.svg" },
-  { value: 120, label: "Total Video Lessons", icon: "/3.svg" },
-  { value: 6000, label: "Total Students Enrolled", icon: "/4.svg" },
+  { value: 14, label: "Our Online Courses", icon: "/1.svg" },
+  { value: 9, label: "Current Hackathons", icon: "/2.svg" },
+  { value: 17, label: "Upcoming Hackathons", icon: "/3.svg" },
+  { value: 4200, label: "Total Students Enrolled", icon: "/4.svg" },
 ];
 
 const StatCard = ({ value, label, index }) => {
