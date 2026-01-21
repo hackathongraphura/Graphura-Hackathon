@@ -166,9 +166,9 @@ const Hackathon = () => {
         <div className="my-10 w-full">
           <div className="flex flex-col gap-2 lg:flex-row lg:justify-end">
             <div className="flex flex-col gap-2 mb-2 lg:flex-row lg:border border-gray-200 lg:shadow-lg lg:rounded-[40px] lg:mr-10 p-3 lg:items-center">
-              <p className="mx-2 font-semibold text-lg">
-                We found <strong>46</strong> hackathons live now
-              </p>
+                        <p className="mx-2 font-semibold text-lg">
+  We found <strong>{filteredData.length}</strong> hackathons live now
+</p>
               <div className="relative flex lg:items-center">
                 <input
                   type="text"
