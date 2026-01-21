@@ -1,8 +1,11 @@
 import React from "react";
+import Navbar from "../Navbar";
+import Footer from "../Footer";
 
 const TermsCondition = () => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-[#03594E] via-[#03594E] to-[#1AB69D]">
+      <Navbar />
       {/* ================= HEADER ================= */}
       <div className="relative min-h-[65vh] flex items-center justify-center text-center px-6">
         {/* Background glow */}
@@ -531,6 +534,7 @@ const TermsCondition = () => {
           animation: fade-in 1s ease-out;
         }
       `}</style>
+      <Footer />
     </section>
   );
 };

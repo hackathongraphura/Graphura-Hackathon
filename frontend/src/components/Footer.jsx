@@ -309,7 +309,7 @@ const handleSubscribe = async () => {
               <ul className="space-y-3">
                 <li>
                   <Link
-                    to="/all-blog"
+                    to="/faq"
                     className="text-gray-700 hover:text-teal-600 transition-colors"
                   >
                     FAQs
