@@ -4,44 +4,44 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   const [scrollY, setScrollY] = useState(0);
   const [email, setEmail] = useState("");
-const [loading, setLoading] = useState(false);
-const [message, setMessage] = useState("");
-const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
 
-const handleSubscribe = async () => {
-  if (!email) {
-    setError("Please enter your email");
-    return;
-  }
-
-  setLoading(true);
-  setError("");
-  setMessage("");
-
-  try {
-    const res = await fetch("/api/subscribe", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email }),
-    });
-
-    const data = await res.json();
-
-    if (!res.ok) {
-      setError(data.message || "Subscription failed");
+  const handleSubscribe = async () => {
+    if (!email) {
+      setError("Please enter your email");
       return;
     }
 
-    setMessage(data.message);
-    setEmail("");
-  } catch (err) {
-    setError("Server error. Please try again later.");
-  } finally {
-    setLoading(false);
-  }
-};
+    setLoading(true);
+    setError("");
+    setMessage("");
+
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.message || "Subscription failed");
+        return;
+      }
+
+      setMessage(data.message);
+      setEmail("");
+    } catch (err) {
+      setError("Server error. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,9 +58,9 @@ const handleSubscribe = async () => {
   return (
     <footer className="relative overflow-visible mt-40">
       {/* Newsletter Section - Positioned to overlap */}
-      <div className="absolute left-0 right-0 -top-28 z-30 px-6">
+      <div className="absolute left-0 right-0 -top-20 z-30 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="bg-teal-800 rounded-2xl py-10 px-8 md:px-12 relative overflow-hidden shadow-2xl">
+          <div className="bg-teal-800 rounded-2xl py-8 px-6 sm:py-10 sm:px-8 md:px-12 relative overflow-hidden shadow-2xl">
             {/* Decorative curved lines */}
             <div className="absolute inset-0 opacity-20">
               <svg
@@ -86,55 +86,56 @@ const handleSubscribe = async () => {
             <div className="relative z-20">
               <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div className="text-white text-center md:text-left">
-                  <h2 className="text-2xl md:text-3xl font-bold">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">
                     Sign Up today to get the latest inspiration & insights
                   </h2>
                 </div>
                 <div className="w-full md:w-auto md:min-w-[380px]">
                   <div className="flex bg-white rounded-lg overflow-hidden shadow-lg">
                     <input
-  type="email"
-  value={email}
-  onChange={(e) => setEmail(e.target.value)}
-  placeholder="Enter Your Email Address"
-  className="flex-1 px-6 py-4 text-gray-700 outline-none"
-/>
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Enter Your Email Address"
+                      className="flex-1 px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base text-gray-700 outline-none min-w-0"
+                    />
 
-<button
-  onClick={handleSubscribe}
-  disabled={loading}
-  className="bg-teal-700 hover:bg-teal-600 text-white px-6 transition-colors disabled:opacity-60"
->
-  {loading ? "..." : (
-    <svg
-      className="w-6 h-6"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M14 5l7 7m0 0l-7 7m7-7H3"
-      />
-    </svg>
-  )}
-</button>
-
-
+                    <button
+                      onClick={handleSubscribe}
+                      disabled={loading}
+                      className="bg-teal-700 hover:bg-teal-600 text-white px-4 sm:px-6 transition-colors disabled:opacity-60 flex-shrink-0"
+                      aria-label="Subscribe"
+                    >
+                      {loading ? (
+                        "..."
+                      ) : (
+                        <svg
+                          className="w-5 h-5 sm:w-6 sm:h-6"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"
+                          />
+                        </svg>
+                      )}
+                    </button>
                   </div>
                   {message && (
-  <p className="text-green-300 mt-3 text-sm font-medium">
-    {message}
-  </p>
-)}
+                    <p className="text-green-300 mt-3 text-sm font-medium text-center md:text-left">
+                      {message}
+                    </p>
+                  )}
 
-{error && (
-  <p className="text-red-300 mt-3 text-sm font-medium">
-    {error}
-  </p>
-)}
+                  {error && (
+                    <p className="text-red-300 mt-3 text-sm font-medium text-center md:text-left">
+                      {error}
+                    </p>
+                  )}
                 </div>
               </div>
             </div>
@@ -190,7 +191,7 @@ const handleSubscribe = async () => {
                       r={dotSize}
                       fill="#D1D5DB"
                       opacity={opacity}
-                    />
+                    />,
                   );
                 }
                 return dots;
@@ -339,7 +340,6 @@ const handleSubscribe = async () => {
                   >
                     Terms & Conditions
                   </Link>
-                  
                 </li>
                 <li>
                   <Link
@@ -381,7 +381,7 @@ const handleSubscribe = async () => {
                     href="mailto:educeet@gmail.com"
                     className="hover:text-teal-600 transition-colors"
                   >
-                    join@graphura.in 
+                    join@graphura.in
                   </a>
                 </li>
                 <li className="text-gray-600">
