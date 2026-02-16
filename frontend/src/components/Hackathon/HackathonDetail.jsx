@@ -43,9 +43,7 @@ const HackathonDetail = () => {
   useEffect(() => {
     const fetchHackathon = async () => {
       try {
-        const res = await axios.get(
-          `/api/hackathon/${id}`
-        );
+        const res = await axios.get(`/api/hackathon/${id}`);
 
         setData(res.data.data);
       } catch (err) {
@@ -108,7 +106,7 @@ const HackathonDetail = () => {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        }
+        },
       );
 
       const newComment = res.data.data;
@@ -119,8 +117,8 @@ const HackathonDetail = () => {
           prev.map((c) =>
             c._id === replyTo
               ? { ...c, replies: [...(c.replies || []), newComment] }
-              : c
-          )
+              : c,
+          ),
         );
         setReplyText("");
         setReplyTo(null);
@@ -210,13 +208,10 @@ const HackathonDetail = () => {
 
   const prizes = data?.prizeDetails?.split(",").map((p) => Number(p.trim()));
 
-const start = new Date(data.startDate).getTime();
-const end = new Date(data.endDate).getTime();
+  const start = new Date(data.startDate).getTime();
+  const end = new Date(data.endDate).getTime();
 
-const durationInHours = Math.ceil(
-  (end - start) / (1000 * 60 * 60)
-);
-
+  const durationInHours = Math.ceil((end - start) / (1000 * 60 * 60));
 
   return (
     <div className="pt-25">
@@ -242,23 +237,23 @@ const durationInHours = Math.ceil(
       <section>
         <div className="mx-4 lg:mx-8 lg:flex gap-[5%] mt-5">
           <div className="pb-4 w-full">
-            <button onClick={()=>navigate("/hackathons")} className="bg-yellow-400 hover:bg-amber-500 hover:-translate-y-1 cursor-pointer duration-200 transition-transform text-white py-2 px-4 rounded-2xl"><FontAwesomeIcon icon={faArrowLeft} /> Back to Hackathons</button>
+            <button
+              onClick={() => navigate("/hackathons")}
+              className="bg-yellow-400 hover:bg-amber-500 hover:-translate-y-1 cursor-pointer duration-200 transition-transform text-white py-2 px-4 rounded-2xl"
+            >
+              <FontAwesomeIcon icon={faArrowLeft} /> Back to Hackathons
+            </button>
             <div className=" relative mt-2 rounded-2xl overflow-hidden max-h-[250px] lg:max-h-[320px]">
               <img
                 src={data.image}
                 alt="hackathon-image"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute bg-black/35 inset-0 flex flex-col justify-center items-center">
-                <h1 className="font-bold text-xl text-white md:text-2xl lg:text-3xl xl:text-4xl mb-5">
-                  {data.title}
-                </h1>
-                <p className="text-white font-medium text-center md:text-lg lg:text-xl px-4">
-                  {data.description}
-                </p>
-              </div>
+              <div className="absolute bg-black/35 inset-0 flex flex-col justify-center items-center"></div>
             </div>
-
+            <h1 className="font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-5 px-4 py-2">
+              {data.title}
+            </h1>
             <div className="grid grid-cols-3 gap-4 md:gap-6 mt-5">
               <div className="border border-gray-200 shadow-md p-2 flex flex-col rounded-xl justify-between lg:items-center lg:justify-start">
                 <div className="flex flex-col lg:flex-row lg:gap-2 lg:items-center justify-center">
@@ -659,7 +654,7 @@ const durationInHours = Math.ceil(
                         <div className="relative flex gap-5 justify-center mt-5 border-b pb-10 border-gray-200">
                           <a
                             href={`https://wa.me/?text=${encodeURIComponent(
-                              `${shareText} ${currentUrl}`
+                              `${shareText} ${currentUrl}`,
                             )}`}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -673,7 +668,7 @@ const durationInHours = Math.ceil(
 
                           <a
                             href={`https://t.me/share/url?url=${encodeURIComponent(
-                              currentUrl
+                              currentUrl,
                             )}&text=${encodeURIComponent(shareText)}`}
                             target="_blank"
                             rel="noopener noreferrer"
