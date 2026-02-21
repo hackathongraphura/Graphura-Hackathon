@@ -111,7 +111,7 @@ const HomeHackathonSlider = () => {
   }
 
   return (
-    <section className="py-8 md:py-12 bg-gradient-to-br from-gray-50 to-green-50">
+    <section className="py-8 bg-gradient-to-br from-gray-50 to-green-50">
       <div className="max-w-7xl mx-auto px-3 sm:px-4">
         {/* Header */}
         <div className="text-center mb-6 md:mb-8">
@@ -124,14 +124,14 @@ const HomeHackathonSlider = () => {
         </div>
 
         {/* Filter Tabs */}
-        <div className="mb-6 md:mb-8 overflow-x-auto scrollbar-hide -mx-3 sm:mx-0">
-          <div className="flex md:justify-center px-3 sm:px-0">
+        <div className="overflow-x-auto scrollbar-hide -mx-3 sm:mx-0">
+          <div className="flex md:justify-center px-3 sm:px-0 mb-4">
             <div className="inline-flex gap-2 bg-white rounded-full p-1.5 sm:p-2 shadow-lg">
               {filterList.map((val) => (
                 <button
                   key={val}
                   onClick={() => setActive(val)}
-                  className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-medium transition-all duration-300 whitespace-nowrap text-xs sm:text-sm ${
+                  className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-medium transition-all duration-300 cursor-pointer whitespace-nowrap text-xs sm:text-sm ${
                     active === val
                       ? "bg-[#03594E] text-white shadow-md"
                       : "text-gray-600 hover:bg-gray-100"
@@ -200,7 +200,7 @@ const HomeHackathonSlider = () => {
               onTouchEnd={handleTouchEnd}
             >
               <div
-                className="flex transition-transform duration-500 ease-out gap-3 sm:gap-4 md:gap-6"
+                className="flex transition-transform duration-500 ease-out gap-3 sm:gap-4 md:gap-6 pt-4 pb-8"
                 style={{
                   transform: `translateX(-${
                     currentIndex *
@@ -215,7 +215,7 @@ const HomeHackathonSlider = () => {
                     key={val._id}
                     className="flex-shrink-0 w-[calc(100%-12px)] sm:w-[calc(100%-16px)] md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
                   >
-                    <div className="group relative rounded-2xl sm:rounded-3xl shadow-lg overflow-hidden border border-gray-200 hover:scale-105 hover:shadow-xl transition-all duration-300 bg-white h-full">
+                    <div className="group relative rounded-2xl sm:rounded-3xl shadow-md overflow-hidden border border-gray-200 hover:scale-105 hover:shadow-xl transition-all duration-300 bg-white h-full">
                       {/* Image */}
                       <div className="overflow-hidden h-40 sm:h-44 md:h-48">
                         <img
@@ -236,8 +236,8 @@ const HomeHackathonSlider = () => {
                                 index % 3 === 0
                                   ? "bg-green-50 text-green-700 border-green-300"
                                   : index % 3 === 1
-                                  ? "bg-blue-50 text-blue-700 border-blue-300"
-                                  : "bg-purple-50 text-purple-700 border-purple-300"
+                                    ? "bg-blue-50 text-blue-700 border-blue-300"
+                                    : "bg-purple-50 text-purple-700 border-purple-300"
                               }`}
                             >
                               {tag}
@@ -299,7 +299,7 @@ const HomeHackathonSlider = () => {
                                 {formatDate(
                                   val.status === "upcoming"
                                     ? val.startDate
-                                    : val.endDate
+                                    : val.endDate,
                                 )}
                               </p>
                             </div>

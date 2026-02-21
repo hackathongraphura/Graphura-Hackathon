@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalendarDays,
+  faCalendarXmark,
   faPeopleGroup,
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
@@ -64,7 +65,7 @@ const Hackathon = () => {
       item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.tags?.some((tag) =>
-        tag.toLowerCase().includes(searchTerm.toLowerCase())
+        tag.toLowerCase().includes(searchTerm.toLowerCase()),
       );
 
     // DATE FILTER (react-calendar)
@@ -83,8 +84,8 @@ const Hackathon = () => {
       isPaid === "All"
         ? true
         : isPaid === "Paid"
-        ? item.isPaid === true
-        : item.isPaid === false;
+          ? item.isPaid === true
+          : item.isPaid === false;
 
     const participationMatch =
       participation === "All"
@@ -103,12 +104,12 @@ const Hackathon = () => {
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
 
   const sortedData = [...filteredData].sort(
-    (a, b) => new Date(a.startDate) - new Date(b.startDate)
+    (a, b) => new Date(a.startDate) - new Date(b.startDate),
   );
 
   const paginatedData = sortedData.slice(
     (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
+    currentPage * itemsPerPage,
   );
 
   const formatDate = (date) => {
@@ -128,7 +129,13 @@ const Hackathon = () => {
     setCurrentPage(1);
   }, [active, searchTerm, range]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading)
+    return (
+      <div className="flex justify-center items-center min-h-[60vh]">
+        <div className="w-12 h-12 border-4 border-yellow-400 border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
+
   if (!data) return <p>Hackathon not found</p>;
 
   return (
@@ -138,13 +145,13 @@ const Hackathon = () => {
       {/* Hero section */}
       <section className="bg-gradient-to-br from-[#03594E] via-[#03594E] to-[#1AB69D] pt-27  pb-5 flex justify-center">
         <div className="relative mx-4 md:mx-8 flex flex-col md:flex-row gap-5 md:justify-between items-center lg:h-[400px] max-w-[1280px] w-full">
-          <div className="relative z-10 max-w-[300px] lg:max-w-[450px]">
-            <h1 className="text-3xl lg:text-4xl xl:text-5xl font-extrabold text-white">
+          <div className="relative z-10 max-w-[400px] lg:max-w-[520px]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight text-white">
               Build the Future.
               <br />
               <span className="text-[#F8C62F]">Join a Hackathon.</span>
             </h1>
-            <p className="text-white mt-1 lg:text-lg lg:max-w-[400px] lg:font-medium">
+            <p className="text-white/80 text-base sm:text-lg mt-1 lg:max-w-[450px]">
               Browse the best coding competitions and start building today.
               Connect with developers, win prizes, and launch your career.
             </p>
@@ -152,8 +159,7 @@ const Hackathon = () => {
 
           <div className="rounded-xl overflow-hidden w-full max-w-[400px] lg:max-w-[500px] floating">
             <img
-              // src="https://res.cloudinary.com/drq2a0262/image/upload/f_webp/v1767686265/Hero_section-removebg-preview_ati5st"
-              src="https://res.cloudinary.com/drq2a0262/image/upload/f_webp/v1767686924/Hero_section_hpi4js"
+              src="https://res.cloudinary.com/dr7phc67r/image/upload/f_auto,q_auto/v1771329203/hack_fjfeox"
               alt="hackathon-image"
               className="w-full h-full object-cover drop-shadow-filter"
             />
@@ -166,9 +172,10 @@ const Hackathon = () => {
         <div className="my-10 w-full">
           <div className="flex flex-col gap-2 lg:flex-row lg:justify-end">
             <div className="flex flex-col gap-2 mb-2 lg:flex-row lg:border border-gray-200 lg:shadow-lg lg:rounded-[40px] lg:mr-10 p-3 lg:items-center">
-                        <p className="mx-2 font-semibold text-lg">
-  We found <strong>{filteredData.length}</strong> hackathons live now
-</p>
+              <p className="mx-2 font-semibold text-lg">
+                We found <strong>{filteredData.length}</strong> hackathons live
+                now
+              </p>
               <div className="relative flex lg:items-center">
                 <input
                   type="text"
@@ -179,14 +186,25 @@ const Hackathon = () => {
                 />
                 <FontAwesomeIcon
                   icon={faSearch}
-                  className="text-black top-3 left-3 absolute"
+                  className="text-white top-3 left-3 absolute"
                 />
                 <span className="bg-[#03594E] w-10 h-10 lg:w-8 lg:h-8  flex items-center justify-center rounded-full mx-2 cursor-pointer">
-                  <FontAwesomeIcon
-                    icon={faCalendarWeek}
-                    className="text-white text-lg"
-                    onClick={() => setShowCalendar((prev) => !prev)}
-                  />
+                  {range && range.length === 2 ? (
+                    <FontAwesomeIcon
+                      icon={faCalendarXmark}
+                      onClick={() => {
+                        setRange([]);
+                        setShowCalendar(false);
+                      }}
+                      className="cursor-pointer text-red-500"
+                    />
+                  ) : (
+                    <FontAwesomeIcon
+                      icon={faCalendarDays}
+                      onClick={() => setShowCalendar((prev) => !prev)}
+                      className="cursor-pointer text-white"
+                    />
+                  )}
                 </span>
                 <div className="lg:hidden">
                   {view === "grid" && (
@@ -287,7 +305,7 @@ const Hackathon = () => {
           </div>
         </div>
         {showCalendar && (
-          <div className="fixed top-20 right-2 z-50 bg-white shadow-xl rounded-xl overflow-hidden w-[320px]">
+          <div className="fixed top-25 right-2 z-50 bg-white shadow-xl rounded-xl overflow-hidden w-[320px]">
             {/* Header */}
             <div className="flex items-center justify-between px-4 py-3 border-b">
               <p className="text-sm text-gray-600">
@@ -297,7 +315,7 @@ const Hackathon = () => {
 
               <button
                 onClick={() => setShowCalendar(false)}
-                className="text-gray-500 hover:text-red-500 text-lg font-bold"
+                className="text-gray-500 hover:text-red-500 text-lg font-bold cursor-pointer"
               >
                 ✕
               </button>
@@ -518,7 +536,7 @@ const Hackathon = () => {
           )}
 
           {view === "list" && (
-            <div className="md:mx-8 pb-5 grid grid-cols-1 gap-6 place-items-center lg:place-items-end w-full">
+            <div className="md:mx-8 pb-5 grid grid-cols-1 gap-6 place-items-start w-full mb-auto">
               {paginatedData.map((val) => (
                 <Link
                   to={`/hackathons/${val._id}`}

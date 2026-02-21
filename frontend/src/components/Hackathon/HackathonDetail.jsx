@@ -217,25 +217,27 @@ const HackathonDetail = () => {
     <div className="pt-25">
       <Navbar />
       {/* Breadcrumb */}
-      <nav className="text-sm text-gray-500 flex items-center gap-1 mx-4 lg:mx-8 my-2">
-        <Link to="/" className="hover:text-black">
-          Home
-        </Link>
+      <div className="flex justify-center">
+        <nav className="text-sm text-gray-500 flex items-center gap-1 mx-4 lg:mx-8 my-2 w-full max-w-[1280px]">
+          <Link to="/" className="hover:text-black">
+            Home
+          </Link>
 
-        <span>/</span>
+          <span>/</span>
 
-        <Link to="/hackathons" className="hover:text-black">
-          Hackathons
-        </Link>
+          <Link to="/hackathons" className="hover:text-black">
+            Hackathons
+          </Link>
 
-        <span>/</span>
+          <span>/</span>
 
-        <span className="text-black font-medium">{data.title}</span>
-      </nav>
+          <span className="text-black font-medium">{data.title}</span>
+        </nav>
+      </div>
 
       {/* hackathon details */}
-      <section>
-        <div className="mx-4 lg:mx-8 lg:flex gap-[5%] mt-5">
+      <section className="flex justify-center">
+        <div className="mx-4 lg:mx-8 lg:flex gap-[5%] mt-5 max-w-[1280px] w-full">
           <div className="pb-4 w-full">
             <button
               onClick={() => navigate("/hackathons")}
@@ -263,7 +265,7 @@ const HackathonDetail = () => {
                       className="text-green-500"
                     />
                   </span>
-                  <span className="text-gray-500 text-sm font-medium lg:text-lg">
+                  <span className="text-gray-500 text-xs sm:text-sm font-medium lg:text-lg">
                     ENROLLMENT ENDS
                   </span>
                 </div>
@@ -279,7 +281,7 @@ const HackathonDetail = () => {
                       className="text-green-500"
                     />
                   </span>
-                  <span className="text-gray-500 text-sm font-medium lg:text-lg">
+                  <span className="text-gray-500 text-xs sm:text-sm font-medium lg:text-lg">
                     STUDENT ENROLLED
                   </span>
                 </div>
@@ -295,7 +297,7 @@ const HackathonDetail = () => {
                       className="text-green-500"
                     />
                   </span>
-                  <span className="text-gray-500 text-sm font-medium lg:text-lg">
+                  <span className="text-gray-500 text-xs sm:text-sm font-medium lg:text-lg">
                     STARTS ON
                   </span>
                 </div>
@@ -597,7 +599,7 @@ const HackathonDetail = () => {
 
           {/* hackathon detail card */}
           <div className="flex justify-center lg:self-start lg:sticky lg:top-0">
-            <div className="mt-2 rounded-2xl overflow-hidden pb-4 shadow-xl w-[300px]">
+            <div className="mt-2 lg:mt-12 rounded-2xl overflow-hidden pb-4 shadow-xl w-[300px]">
               <div>
                 <img src={data.image} alt="hackathon-image" />
               </div>
@@ -715,20 +717,20 @@ const HackathonDetail = () => {
       </section>
 
       {/* Live hackathons section */}
-      <section>
-        <div className="mt-8 pb-5">
-          <div className="flex justify-between mx-4 lg:mx-8">
+      <section className="flex justify-center">
+        <div className="mt-8 pb-5 w-full max-w-[1280px]">
+          <div className="flex justify-between mx-4">
             <span className="font-bold lg:text-xl">
               100+ Latest Hackathons Live Now
             </span>
             <span
-              className="font-semibold text-green-500 lg:text-xl cursor-pointer"
+              className="font-semibold text-green-500 lg:text-xl cursor-pointer mr-2"
               onClick={() => navigate("/hackathons")}
             >
               View All <FontAwesomeIcon icon={faArrowRight} />
             </span>
           </div>
-          <div className="pl-4 lg:pl-8 flex gap-5 overflow-x-auto scrollbar-hide py-6">
+          <div className="pl-4 flex gap-5 overflow-x-auto scrollbar-hide py-6">
             {allHackathons
               .filter((event) => event.status === "ongoing")
               .map((hackathon) => (
