@@ -72,7 +72,7 @@ const AdminSidebar = ({ active, setActive }) => {
           
           <button
             onClick={() => setIsCollapsed(!isCollapsed)}
-            className="p-2 rounded-lg hover:bg-gray-100 transition-all duration-200 hover:shadow-sm active:scale-95"
+            className="p-2 rounded-lg hover:bg-gray-100 cursor-pointer transition-all duration-200 hover:shadow-sm active:scale-95"
             style={{ color: "#03594E" }}
           >
             {isCollapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
@@ -86,7 +86,7 @@ const AdminSidebar = ({ active, setActive }) => {
           <button
             key={key}
             onClick={() => setActive(key)}
-            className={`flex items-center gap-3 w-full px-4 py-3 rounded-xl text-left transition-all duration-200 relative group
+            className={`flex items-center gap-3 w-full cursor-pointer px-4 py-3 rounded-xl text-left transition-all duration-200 relative group
               ${active === key
                 ? "text-white shadow-lg transform scale-[1.02]"
                 : "hover:bg-white hover:shadow-md text-gray-700"}
@@ -139,7 +139,7 @@ const AdminSidebar = ({ active, setActive }) => {
         >
           <Home 
             size={20} 
-            className="group-hover:-translate-x-1 transition-transform duration-200"
+            className="group-hover:-translate-x-1 cursor-pointer transition-transform duration-200"
             strokeWidth={2.5}
           />
           {!isCollapsed && <span className="text-sm">Back to Home</span>}
@@ -156,7 +156,7 @@ const AdminSidebar = ({ active, setActive }) => {
         >
           <LogOut 
             size={20} 
-            className="group-hover:rotate-12 transition-transform duration-200"
+            className="group-hover:rotate-12 cursor-pointer transition-transform duration-200"
             strokeWidth={2.5}
           />
           {!isCollapsed && <span className="text-sm">Logout</span>}

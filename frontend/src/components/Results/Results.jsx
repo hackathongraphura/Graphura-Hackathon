@@ -123,7 +123,7 @@ const Results = () => {
             text-3xl
             sm:text-4xl
             md:text-5xl
-            lg:text-5xl
+            xl:text-6xl
             font-bold
             leading-tight
             text-white
@@ -157,7 +157,7 @@ const Results = () => {
         {/* Description */}
         <p
           className="
-            text-white/90 text-sm sm:text-base md:text-lg
+            text-white/80 text-base sm:text-lg
             mb-6 sm:mb-8 lg:mb-10
             max-w-xl mb-10 leading-relaxed
             opacity-0 hero-fade-up delay-300

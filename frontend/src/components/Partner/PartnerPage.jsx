@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useState } from "react";
 import axios from "axios";
 import innovationAndImpact from "../../assets/partnerPage/InnovationAndImpact.avif";
@@ -11,6 +11,7 @@ import heroCardBottom from "/hero-section-3.jpeg";
 import Footer from "../Footer";
 
 export default function PartnerPage() {
+  const contactRef = useRef(null);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -18,6 +19,10 @@ export default function PartnerPage() {
     companyHQ: "",
     message: "",
   });
+
+    const scrollToSection = (ref) => {
+    ref.current.scrollIntoView({ behavior: "smooth" });
+  };
 
   const handleChange = (e) => {
     setFormData({
@@ -68,17 +73,19 @@ export default function PartnerPage() {
               Partner Program
             </span>
 
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-              Become a Graphura’s Partner
+            <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold leading-tight">
+              Become a Graphura Partner
             </h1>
 
-            <p className="text-white/80 text-lg leading-relaxed">
+            <p className="text-white/80 text-base sm:text-lg leading-relaxed">
               Join Graphura’s trusted circle of partners and empower the next
               generation of innovators through impactful challenges and
               meaningful collaboration.
             </p>
 
-            <button className="px-8 py-4 bg-[#F8C62F] text-[#0C121D] rounded-xl font-semibold hover:bg-[#e0b429] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#F8C62F]/40">
+            <button
+             onClick={() => scrollToSection(contactRef)}
+            className="px-8 py-4 cursor-pointer bg-[#F8C62F] text-[#0C121D] rounded-xl font-semibold hover:bg-[#e0b429] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#F8C62F]/40">
               Join our network
             </button>
           </div>
@@ -192,7 +199,7 @@ export default function PartnerPage() {
       </section>
 
       {/* WHAT OUR PARTNERS GET */}
-      <section className="bg-gray-50 py-20 px-6">
+      <section className="bg-gray-50 py-10 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">
             What Our Partners Get
@@ -220,7 +227,8 @@ export default function PartnerPage() {
       </section>
 
       {/* FORM */}
-      <section className="max-w-4xl mx-auto px-6 py-20">
+      <section className="max-w-4xl mx-auto px-6 py-10"
+      ref={contactRef}>
         <h2 className="text-3xl font-bold mb-8 text-center">
           Become a Partner Today
         </h2>
@@ -270,7 +278,7 @@ export default function PartnerPage() {
           <div className="md:col-span-2 flex justify-center">
             <button
               type="submit"
-              className="mt-4 px-10 py-4 bg-[#F8C62F] text-[#0C121D] rounded-xl font-semibold hover:bg-[#e0b429] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#F8C62F]/40"
+              className="mt-4 cursor-pointer px-10 py-4 bg-[#F8C62F] text-[#0C121D] rounded-xl font-semibold hover:bg-[#e0b429] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#F8C62F]/40"
             >
               Apply
             </button>

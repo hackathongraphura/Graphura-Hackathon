@@ -76,7 +76,7 @@ export default function FAQ() {
           pt-[120px] sm:pt-[140px]
           relative
           overflow-hidden
-          pb-24 sm:pb-28
+          pb-20
           min-h-[calc(100vh-80px)]
           flex items-start lg:items-center
           bg-gradient-to-br from-[#03594E] via-[#03594E] to-[#1AB69D]
@@ -116,10 +116,9 @@ export default function FAQ() {
               {/* Heading */}
               <h1
                 className="
-                  text-3xl sm:text-4xl md:text-5xl lg:text-5xl
+                  text-3xl sm:text-4xl md:text-5xl xl:text-6xl
                   font-bold
                   leading-tight
-                  font-[var(--it-ff-heading)]
                   text-white
                   mb-8
                   drop-shadow-[0_6px_30px_rgba(0,0,0,0.35)]
@@ -148,8 +147,7 @@ export default function FAQ() {
               {/* Description */}
               <p
                 className="
-                  text-white/85
-                  text-lg md:text-xl
+                text-white/80 text-base sm:text-lg
                   max-w-xl
                   mb-6 sm:mb-10
                   leading-relaxed
@@ -191,7 +189,7 @@ export default function FAQ() {
 
 
         {/* ================= FAQ SECTION ================= */}
-        <section className="py-16 sm:py-24">
+        <section className="py-12">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 sm:gap-16">
 
             {/* LEFT CONTENT */}
@@ -235,7 +233,7 @@ export default function FAQ() {
                     onClick={() => setActiveIndex(isOpen ? null : index)}
                     className="
                         w-full flex items-center justify-between
-                        py-4 text-left
+                        py-4 text-left cursor-pointer
                         group
                     "
                     >

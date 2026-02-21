@@ -174,12 +174,12 @@ const SlidingAuthPage = () => {
       </div>
 
       {/* Main Container */}
-      <div className="relative w-full max-w-6xl md:h-[600px] bg-white rounded-3xl shadow-2xl overflow-hidden">
+      <div className="relative mt-25 lg:mt-10 w-full max-w-6xl md:h-[600px] bg-white rounded-3xl shadow-2xl overflow-hidden">
         {/* Mobile Toggle Buttons - Only visible on mobile */}
         <div className="md:hidden flex w-full border-b border-gray-200">
           <button
             onClick={() => setIsSignUp(false)}
-            className={`flex-1 py-4 font-bold transition-all ${
+            className={`flex-1 py-4 font-bold transition-all cursor-pointer ${
               !isSignUp
                 ? "bg-gradient-to-br from-[#F8C62F] to-[#FE8235] text-white"
                 : "bg-white text-gray-600"
@@ -189,7 +189,7 @@ const SlidingAuthPage = () => {
           </button>
           <button
             onClick={() => setIsSignUp(true)}
-            className={`flex-1 py-4 font-bold transition-all ${
+            className={`flex-1 py-4 font-bold transition-all cursor-pointer ${
               isSignUp
                 ? "bg-gradient-to-br from-[#F8C62F] to-[#FE8235] text-white"
                 : "bg-white text-gray-600"
@@ -217,7 +217,7 @@ const SlidingAuthPage = () => {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#F8C62F] to-[#FE8235] rounded-full mb-3">
                 <User className="w-8 h-8 text-white" />
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-1">
+              <h2 className="text-2xl md:text-3xl cursor-pointer font-bold text-gray-800 mb-1">
                 Sign In
               </h2>
               {/* <p className="text-gray-500 text-sm md:text-base">Join us today - it only takes a minute</p> */}
@@ -259,7 +259,7 @@ const SlidingAuthPage = () => {
               <button
                 onClick={handleLoginSubmit}
                 disabled={loading}
-                className="w-full bg-gradient-to-br from-[#F8C62F] to-[#FE8235] py-3.5 rounded-lg font-bold text-white transition transform hover:scale-[1.02] disabled:opacity-50"
+                className="w-full cursor-pointer bg-gradient-to-br from-[#F8C62F] to-[#FE8235] py-3.5 rounded-lg font-bold text-white transition transform hover:scale-[1.02] disabled:opacity-50"
               >
                 {loading ? "SIGNING IN..." : "SIGN IN"}
               </button>
@@ -494,7 +494,7 @@ const SlidingAuthPage = () => {
               <button
                 onClick={handleSignupSubmit}
                 disabled={loading}
-                className="w-full bg-gradient-to-br from-[#F8C62F] to-[#FE8235] py-3 rounded-xl font-bold text-white transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                className="w-full cursor-pointer bg-gradient-to-br from-[#F8C62F] to-[#FE8235] py-3 rounded-xl font-bold text-white transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
                 {loading ? (
                   <span className="flex items-center justify-center gap-2">
@@ -534,7 +534,7 @@ const SlidingAuthPage = () => {
                   <p className="text-lg mb-8">Sign up now and if you don't have a account</p>
                   <button
                     onClick={() => setIsSignUp(true)}
-                    className="px-12 py-3 border-2 border-white rounded-full font-bold hover:bg-white hover:text-[#03594E] transition"
+                    className="px-12 py-3 border-2 cursor-pointer border-white rounded-full font-bold hover:bg-white hover:text-[#03594E] transition"
                   >
                     SIGN UP
                   </button>
@@ -545,7 +545,7 @@ const SlidingAuthPage = () => {
                   <p className="text-lg mb-8">Sign in with Email & Password</p>
                   <button
                     onClick={() => setIsSignUp(false)}
-                    className="px-12 py-3 border-2 border-white rounded-full font-bold hover:bg-white hover:text-[#03594E] transition"
+                    className="px-12 py-3 border-2 cursor-pointer border-white rounded-full font-bold hover:bg-white hover:text-[#03594E] transition"
                   >
                     SIGN IN
                   </button>

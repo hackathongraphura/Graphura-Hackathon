@@ -127,13 +127,13 @@ const BlogDetails = () => {
       {/* ================= HERO ================= */}
       <section className="bg-gradient-to-br from-[#03594E] via-[#03594E] to-[#1AB69D] py-32 text-center text-white">
         <p className="text-sm mb-4">Home → Blog → {blog.title}</p>
-        <h1 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold leading-tight mx-auto">
           {blog.title}
         </h1>
       </section>
 
       {/* ================= MAIN ================= */}
-      <section className="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <section className="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-12 gap-12">
         {/* ========== LEFT SIDEBAR (UNCHANGED) ========== */}
         <aside className="lg:col-span-4 space-y-8">
           {/* Search */}
@@ -213,7 +213,7 @@ const BlogDetails = () => {
               if (section.type === "heading") {
                 return (
                   <h3 key={index} className="text-2xl font-semibold">
-                    {section.content}
+                     • {section.content}
                   </h3>
                 );
               }

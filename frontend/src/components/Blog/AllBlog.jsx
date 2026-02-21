@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // HERO ASSETS
 import heroImg from "../../assets/blogs/blog-hero.png";
@@ -16,7 +16,7 @@ const AllBlog = () => {
   const [blogs, setBlogs] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
-
+  const navigate = useNavigate();
   /* ================= FETCH BLOGS ================= */
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -54,20 +54,20 @@ const AllBlog = () => {
         <div className="container mx-auto px-4 pt-32 pb-28 md:pt-36">
           <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
             {/* LEFT */}
-            <div className="relative z-10 text-center md:text-left max-w-xl">
+            <div className="relative z-10 text-center md:text-left max-w-[600px]">
               {/* <img
                 src={brushImg}
                 alt=""
                 className="hidden md:block absolute w-full h-5 left-0 top-10"
               /> */}
 
-              <h1 className="text-4xl sm:text-5xl font-extrabold mb-6 text-[#e0e0e0]">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold leading-tight mb-6 text-white">
                 Graphura Hackathon
                 <br />
                 <span className="text-yellow-400">Blogs</span>
               </h1>
 
-              <p className="text-base sm:text-lg leading-relaxed text-[#d4d4d4]">
+              <p className="text-white/80 text-base sm:text-lg leading-relaxed">
                 Drop in. Team up. Build fast. Outplay the competition. A
                 survival-of-the-smartest hackathon where only the top creators
                 claim victory.
@@ -99,7 +99,7 @@ const AllBlog = () => {
       </section>
 
       {/* ================= BLOG GRID ================= */}
-      <section className="container mx-auto px-4 py-16">
+      <section className="container mx-auto px-4 py-10">
         {loading ? (
           <p className="text-center text-gray-500">Loading blogs...</p>
         ) : (
@@ -108,7 +108,8 @@ const AllBlog = () => {
               {currentBlogs.map((blog) => (
                 <div
                   key={blog._id}
-                  className="bg-white rounded-2xl shadow-sm hover:shadow-md transition overflow-hidden"
+                  onClick={() => navigate(`/blog/${blog._id}`)}
+                  className="bg-white cursor-pointer rounded-2xl shadow-sm hover:shadow-md transition overflow-hidden"
                 >
                   {/* Image */}
                   <div className="relative">
@@ -140,7 +141,7 @@ const AllBlog = () => {
 
                     {/* SEND USER TO /blog */}
                     <Link to={`/blog/${blog._id}`}>
-                      <button className="text-sm font-medium flex items-center gap-2 hover:gap-3 transition-all text-[#03594E]">
+                      <button className="text-sm cursor-pointer font-medium flex items-center gap-2 hover:gap-3 transition-all text-[#03594E]">
                         More Details <span>→</span>
                       </button>
                     </Link>

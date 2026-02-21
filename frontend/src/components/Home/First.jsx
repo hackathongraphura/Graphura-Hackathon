@@ -18,7 +18,7 @@ export default function First() {
 
   return (
     <main className="bg-white">
-      <section className="py-24 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6 text-center">
           {/* SMALL PILL LABEL */}
           <div className="inline-block mb-6 px-5 py-5 rounded-full border border-green-200 text-green-700 text-md font-medium">
@@ -127,7 +127,7 @@ export default function First() {
       {/* ================= COUNTERS ================= */}
       <StatCard />
 
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                   
                   {/* LEFT: IMAGE STACK */}

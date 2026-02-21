@@ -33,8 +33,8 @@ const Career = () => {
   ];
 
   const faqAnswers = [
-   "Graphura Hackathon is a multi-domain innovation hackathon where participants collaborate to solve real-world problems using technology, creativity, and strategic thinking.",
-  
+    "Graphura Hackathon is a multi-domain innovation hackathon where participants collaborate to solve real-world problems using technology, creativity, and strategic thinking.",
+
     "Students, freshers, professionals, developers, designers, marketers, and innovators from any background are welcome to participate.",
 
     "No prior experience is required. Beginners are highly encouraged to participate and learn through hands-on collaboration and mentorship.",
@@ -48,7 +48,7 @@ const Career = () => {
     "Graphura Hackathon covers multiple domains including Web & App Development, AI / ML, Cybersecurity, UI/UX Design, Business & Marketing, Social Impact, and Open Innovation.",
 
     "Projects are judged based on innovation, problem-solving, execution, feasibility, presentation, and real-world impact.",
-];
+  ];
 
   const logos = [
     "https://res.cloudinary.com/drq2a0262/image/upload/f_webp/v1767700392/Hindustan_times_slsorl",
@@ -124,7 +124,7 @@ const Career = () => {
 
   const prevReview = () => {
     setCurrentReview((prevIndex) =>
-      prevIndex === 0 ? reviews.length - 1 : prevIndex - 1
+      prevIndex === 0 ? reviews.length - 1 : prevIndex - 1,
     );
   };
 
@@ -164,11 +164,11 @@ const Career = () => {
       {/* hero section */}
       <section className="pt-18 bg-linear-to-br from-[#03594E] via-[#03594E] to-[#1AB69D] flex justify-center">
         <div className="relative px-4 lg:px-8 pt-15 pb-35 md:pb-40 lg:pb-50 flex flex-col gap-3 lg:gap-5 items-center w-full max-w-[1280px] animate-fading-in">
-          <h1 className="text-[#F8C62F] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-center ">
+          <h1 className="text-[#F8C62F] text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold leading-tight text-center ">
             <span className="text-white">Start Your</span>
             <br /> Career with Graphura
           </h1>
-          <p className="text-white font-medium text-center max-w-[800px] lg:text-lg">
+          <p className="text-center max-w-[800px] text-white/80 text-base sm:text-lg">
             Graphura Hackathon is your launchpad to real opportunities—where
             talent meets innovation, skills turn into impact, and careers take
             shape through challenges that matter.
@@ -186,20 +186,20 @@ const Career = () => {
               AS SEEN ON
             </h2>
             <div className="w-full overflow-hidden py-6">
-            <div className="logo-slider">
-              {[...universities, ...universities].map((logo, index) => (
-                <div
-                  key={index}
-                  className="mx-10 flex items-center cursor-pointer"
-                >
-                  <img
-                    src={logo}
-                    alt="logo"
-                    className="h-20 w-auto object-contain transition"
-                  />
-                </div>
-              ))}
-            </div>
+              <div className="logo-slider">
+                {[...universities, ...universities].map((logo, index) => (
+                  <div
+                    key={index}
+                    className="mx-10 flex items-center cursor-pointer"
+                  >
+                    <img
+                      src={logo}
+                      alt="logo"
+                      className="h-20 w-auto object-contain transition"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -240,7 +240,7 @@ const Career = () => {
 
       {/* About internship section */}
       <section className="flex justify-center">
-        <div className="mt-16 mx-4 lg:mx-8 w-full max-w-[1280px] relative">
+        <div className="mt-10 mx-4 lg:mx-8 w-full max-w-[1280px] relative">
           <h1 className="text-xl font-extrabold text-center md:text-2xl lg:text-3xl">
             Transform your career with our internship program
           </h1>
@@ -263,6 +263,7 @@ const Career = () => {
         text-2xl
         text-[#03594E]
         hover:bg-[#E6F4F1]
+        cursor-pointer
       "
           >
             ‹
@@ -286,6 +287,7 @@ const Career = () => {
         text-2xl
         text-[#03594E]
         hover:bg-[#E6F4F1]
+        cursor-pointer
       "
           >
             ›
@@ -309,7 +311,12 @@ const Career = () => {
                 className="results-slide flex justify-center"
               >
                 {/* CARD */}
-                <div className="group cursor-pointer flex flex-col rounded-2xl overflow-hidden w-[320px] h-100 shadow-lg border border-gray-200 pb-5 bg-white mb-5 ml-5">
+                <div
+                  onClick={() =>
+                    navigate("https://graphura.online/internship.html")
+                  }
+                  className="group cursor-pointer flex flex-col rounded-2xl overflow-hidden w-[320px] h-100 shadow-lg border border-gray-200 pb-5 bg-white mb-5 ml-5"
+                >
                   <div className="h-50 overflow-hidden">
                     <img
                       className="object-cover group-hover:scale-110 duration-200 transition-transform"
@@ -326,7 +333,7 @@ const Career = () => {
 
                   <Link
                     to="https://graphura.online/internship.html"
-                    className="mx-8 mt-auto text-[#fab031] font-medium"
+                    className="mx-8 mt-auto text-[#fab031] font-medium hover:scale-105 transition-transform duration-300"
                   >
                     More about internship →
                   </Link>
@@ -361,7 +368,7 @@ const Career = () => {
 
       {/* Our Recruiters section */}
       <section>
-        <div className="mt-20">
+        <div className="mt-15">
           <h1 className="text-xl font-extrabold w-full text-center md:text-2xl lg:text-3xl">
             Our Recruiters
           </h1>
@@ -394,101 +401,99 @@ const Career = () => {
         </div>
       </section>
 
+      {/* Testimonial section */}
+      <section className="py-10 bg-gradient-to-br from-slate-50 via-blue-50 to-teal-50 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4">
+          {/* Heading */}
+          <h2 className="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-16">
+            What Our Interns Say
+          </h2>
 
+          {/* Testimonial Card */}
+          <div className="relative max-w-6xl mx-auto">
+            <div className="bg-white rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:shadow-3xl">
+              <div className="grid md:grid-cols-5 gap-8 h-full">
+                {/* Image Section */}
+                <div className="md:col-span-2 relative h-96 md:h-auto">
+                  <div className="absolute inset-0 bg-gradient-to-br from-teal-600 to-teal-800"></div>
+                  <img
+                    src={currentReviews?.user?.image}
+                    alt={currentReviews?.user?.name}
+                    className="w-full h-full object-cover opacity-90"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-teal-900/50 to-transparent"></div>
+                </div>
 
-{/* Testimonial section */}
-<section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-teal-50 overflow-hidden">
-  <div className="max-w-7xl mx-auto px-4">
-    {/* Heading */}
-    <h2 className="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-16">
-      What Our Interns Say
-    </h2>
+                {/* Content Section */}
+                <div className="md:col-span-3 p-8 md:p-12 flex flex-col justify-between">
+                  <Quote className="w-16 h-16 text-teal-600 mb-6 opacity-50" />
 
-    {/* Testimonial Card */}
-    <div className="relative max-w-6xl mx-auto">
-      <div className="bg-white rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:shadow-3xl">
-        <div className="grid md:grid-cols-5 gap-8 h-full">
-          {/* Image Section */}
-          <div className="md:col-span-2 relative h-96 md:h-auto">
-            <div className="absolute inset-0 bg-gradient-to-br from-teal-600 to-teal-800"></div>
-            <img
-              src={currentReviews?.user?.image}
-              alt={currentReviews?.user?.name}
-              className="w-full h-full object-cover opacity-90"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-teal-900/50 to-transparent"></div>
-          </div>
+                  <p className="md:text-lg text-gray-700 leading-relaxed mb-8 line-clamp-6">
+                    {currentReviews?.text}
+                  </p>
 
-          {/* Content Section */}
-          <div className="md:col-span-3 p-8 md:p-12 flex flex-col justify-between">
-            <Quote className="w-16 h-16 text-teal-600 mb-6 opacity-50" />
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h4 className="text-2xl font-bold text-gray-900 mb-1">
+                        {currentReviews?.user?.name}
+                      </h4>
+                    </div>
 
-            <p className="md:text-lg text-gray-700 leading-relaxed mb-8 line-clamp-6">
-              {currentReviews?.text}
-            </p>
-
-            <div className="flex items-center justify-between">
-              <div>
-                <h4 className="text-2xl font-bold text-gray-900 mb-1">
-                  {currentReviews?.user?.name}
-                </h4>
-              </div>
-
-              {/* Rating Stars */}
-              <div className="flex gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <svg
-                    key={i}
-                    className="w-6 h-6 text-yellow-400 fill-current"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                  </svg>
-                ))}
+                    {/* Rating Stars */}
+                    <div className="flex gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <svg
+                          key={i}
+                          className="w-6 h-6 text-yellow-400 fill-current"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+
+            {/* Navigation Buttons */}
+            <button
+              onClick={prevReview}
+              className="absolute cursor-pointer left-4 md:-left-6 top-1/2 -translate-y-1/2 bg-white w-12 h-12 rounded-full shadow-xl flex items-center justify-center text-teal-600 hover:bg-teal-600 hover:text-white transition-all duration-300 hover:scale-110 z-10"
+              aria-label="Previous testimonial"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+
+            <button
+              onClick={nextReview}
+              className="absolute cursor-pointer right-4 md:-right-6 top-1/2 -translate-y-1/2 bg-white w-12 h-12 rounded-full shadow-xl flex items-center justify-center text-teal-600 hover:bg-teal-600 hover:text-white transition-all duration-300 hover:scale-110 z-10"
+              aria-label="Next testimonial"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+
+          {/* Dots Indicator */}
+          <div className="flex justify-center gap-3 mt-12">
+            {reviews.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentReview(index)}
+                className={`transition-all duration-300 rounded-full ${
+                  index === currentReview
+                    ? "w-12 h-3 bg-teal-600"
+                    : "w-3 h-3 bg-gray-300 hover:bg-teal-400"
+                }`}
+                aria-label={`Go to testimonial ${index + 1}`}
+              />
+            ))}
           </div>
         </div>
-      </div>
-
-      {/* Navigation Buttons */}
-      <button
-        onClick={prevReview}
-        className="absolute left-4 md:-left-6 top-1/2 -translate-y-1/2 bg-white w-12 h-12 rounded-full shadow-xl flex items-center justify-center text-teal-600 hover:bg-teal-600 hover:text-white transition-all duration-300 hover:scale-110 z-10"
-        aria-label="Previous testimonial"
-      >
-        <ChevronLeft className="w-6 h-6" />
-      </button>
-
-      <button
-        onClick={nextReview}
-        className="absolute right-4 md:-right-6 top-1/2 -translate-y-1/2 bg-white w-12 h-12 rounded-full shadow-xl flex items-center justify-center text-teal-600 hover:bg-teal-600 hover:text-white transition-all duration-300 hover:scale-110 z-10"
-        aria-label="Next testimonial"
-      >
-        <ChevronRight className="w-6 h-6" />
-      </button>
-    </div>
-
-    {/* Dots Indicator */}
-    <div className="flex justify-center gap-3 mt-12">
-      {reviews.map((_, index) => (
-        <button
-          key={index}
-          onClick={() => setCurrentReview(index)}
-          className={`transition-all duration-300 rounded-full ${
-            index === currentReview
-              ? "w-12 h-3 bg-teal-600"
-              : "w-3 h-3 bg-gray-300 hover:bg-teal-400"
-          }`}
-          aria-label={`Go to testimonial ${index + 1}`}
-        />
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* FAQ section */}
-      <section className="mt-15 flex justify-center">
+      {/* <section className="mt-15 flex justify-center">
         <div className="w-full max-w-[1280px]">
           <h1 className="w-full text-center text-xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold">
             Frequently Asked Questions
@@ -526,7 +531,7 @@ const Career = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
       <Footer />
     </div>
   );

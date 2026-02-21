@@ -131,7 +131,7 @@ export default function PastResults({ pastHackathons }) {
             <button
               onClick={() => setSelectedHackathon(hack)}
               className="mt-5 px-5 py-1.5 text-[11px] font-bold tracking-widest rounded-full border
-                text-[#03594E] hover:bg-[#03594E] hover:text-white transition-all"
+                text-[#03594E] hover:bg-[#03594E] hover:text-white transition-all cursor-pointer"
             >
               SHOW DETAILS
             </button>

@@ -37,7 +37,6 @@ const universities = [
     "https://res.cloudinary.com/drq2a0262/image/upload/f_webp/v1768561286/National_Institute_of_Technology__Kurukshetra_Logo_cqzp8f",
     "https://res.cloudinary.com/drq2a0262/image/upload/f_webp/v1768561285/InstituteLogo_Colour_ftmshg",
     "https://res.cloudinary.com/drq2a0262/image/upload/f_webp/v1768561284/Indian_Institute_of_Technology_Delhi_Logo_1_rg5kdx",
-    "https://res.cloudinary.com/drq2a0262/image/upload/f_webp/v1768561281/bhartilogo_lltuk8",
     "https://res.cloudinary.com/drq2a0262/image/upload/f_webp/v1768561284/iitp_logo_sdjfps",
     "https://res.cloudinary.com/drq2a0262/image/upload/f_webp/v1768561284/d0cf9993-b4cf-430b-bd83-cce09b67a726_kovpvw",
     "https://res.cloudinary.com/drq2a0262/image/upload/f_webp/v1768561283/cc75ce0b-e8ba-4b13-a971-5f1255a5b46d_removalai_preview_1_peiilg",
@@ -137,7 +136,7 @@ export default function About() {
           pt-[120px] sm:pt-[140px]
           relative
           overflow-hidden
-          pb-24 sm:pb-28
+          pb-24
           min-h-[calc(100vh-80px)]
           flex items-start lg:items-center
           bg-gradient-to-br from-[#03594E] via-[#03594E] to-[#1AB69D]
@@ -165,7 +164,7 @@ export default function About() {
 
 
               <h1 className="
-                text-4xl md:text-5xl leading-tight font-bold text-white mb-6
+                text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold leading-tight text-white mb-6
                 opacity-0 hero-fade-up delay-200
               ">
                 Where Hackathons <br />
@@ -176,8 +175,9 @@ export default function About() {
               </h1>
 
               <p className="
-                text-white/80 text-lg max-w-xl mb-10
+               max-w-xl mb-10
                 opacity-0 hero-fade-up delay-300
+                text-white/80 text-base sm:text-lg
               ">
                 We redefine hackathons into competitive, game-driven arenas where
                 innovation, skills, and teamwork level you up for the real world.
@@ -192,6 +192,7 @@ export default function About() {
                     rounded-xl font-semibold transition-all
                     hover:bg-[#e0b429] hover:scale-105
                     hover:shadow-3xl hover:shadow-[#F8C62F]/40
+                     cursor-pointer
                   "
                 >
                   Explore Hackathons →
@@ -213,7 +214,7 @@ export default function About() {
         <div className="h-[2px] bg-gradient-to-r from-transparent via-[#E6F4F1]/70 to-transparent" />
 
         {/* ================= ABOUT CONTENT ================= */}
-        <section className="py-16 md:py-24 bg-white">
+        <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             
             {/* LEFT: IMAGE STACK */}
@@ -319,7 +320,7 @@ export default function About() {
         <div className="h-[2px] bg-gradient-to-r from-transparent via-[#E6F4F1]/70 to-transparent" />
 
         {/* ================= WHY CHOOSE (ANIMATED) ================= */}
-        <section className="py-16 md:py-24 overflow-hidden">
+        <section className="py-16 overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 text-center">
             <motion.span
               initial={{ opacity: 0, y: 20 }}
@@ -391,7 +392,7 @@ export default function About() {
         <div className="h-[2px] bg-gradient-to-r from-transparent via-[#E6F4F1]/70 to-transparent" />
 
         {/* ================= PARTNERS ================= */}
-      <section className="relative py-16 md:py-28 bg-[#F6FAF9] overflow-hidden">
+      <section className="relative py-16 bg-[#F6FAF9] overflow-hidden">
           {/* Background accents */}
           <div className="absolute -top-20 -left-20 w-80 h-80 bg-[#1AB69D]/10 rounded-full blur-3xl" />
           <div className="absolute bottom-0 -right-24 w-96 h-96 bg-[#F8C62F]/20 rounded-full blur-3xl" />
@@ -414,7 +415,7 @@ export default function About() {
     {universities.map((logo, index) => (
       <div
         key={`uni-a-${index}`}
-        className="rounded-xl p-6 mx-5 flex items-center justify-center shadow-sm min-w-[140px] sm:min-w-[180px] bg-white"
+        className="rounded-xl p-5 mx-5 flex items-center justify-center shadow-sm min-w-[140px] sm:min-w-[180px] bg-white"
       >
         <img
           src={logo}
@@ -450,14 +451,14 @@ export default function About() {
         <div className="h-[2px] bg-gradient-to-r from-transparent via-[#E6F4F1]/70 to-transparent" />
 
         {/* ================= TEAM ================= */}
-        <section className="py-16 md:py-28 bg-gradient-to-b from-white to-[#F9FAFB]">
+        <section className="py-16 bg-gradient-to-b from-white to-[#F9FAFB]">
 
           <div className="max-w-7xl mx-auto px-6 text-center">
             <span className="inline-block mb-4 text-base bg-[#E6F4F1] text-[#03594E] px-5 py-1.5 rounded-full">
               Meet Our Team
             </span>
 
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 md:mb-16">
+            <h2 className="text-2xl md:text-4xl font-bold mb-10">
               Meet the Passionate & Expert Minds Behind Your Successful Hackathons
             </h2>
 
@@ -491,6 +492,7 @@ export default function About() {
                     ease-out
                     hover:shadow-xl
                     hover:-translate-y-2
+                    cursor-pointer
                   "
                 >
 

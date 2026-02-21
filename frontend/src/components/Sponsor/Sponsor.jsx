@@ -28,7 +28,6 @@ const Sponsor = () => {
   });
   const formRef = useRef(null);
   const logos = [
-    "https://res.cloudinary.com/drq2a0262/image/upload/f_webp/v1767700392/Hindustan_times_slsorl",
     "https://res.cloudinary.com/drq2a0262/image/upload/f_webp/v1767700392/Deewal_aa6obw",
     "https://res.cloudinary.com/drq2a0262/image/upload/f_webp/v1767700378/Accenture_bfsucq",
     "https://res.cloudinary.com/drq2a0262/image/upload/f_webp/v1767700378/Bajaj_sgqhky",
@@ -61,10 +60,7 @@ const Sponsor = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post(
-        "/api/sponsor-interest",
-        formData
-      );
+      const res = await axios.post("/api/sponsor-interest", formData);
 
       if (res.data.success) {
         setFormData({
@@ -88,16 +84,16 @@ const Sponsor = () => {
       {/* hero section */}
       <section className="bg-gradient-to-br from-[#03594E] via-[#03594E] to-[#1AB69D] flex justify-center">
         <div className="w-full px-4 lg:px-8 pt-20 pb-15 mt-15 flex flex-col gap-10 items-center lg:flex-row lg:justify-between max-w-[1280px] animate-fading-in">
-          <div className="max-w-[500px]">
+          <div className="max-w-[500px] xl:max-w-[580px]">
             <div className="flex flex-wrap justify-center lg:justify-start">
-              <h1 className="text-3xl lg:text-4xl xl:text-5xl font-extrabold text-white">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold leading-tight text-white">
                 Invest in Ideas.
               </h1>
-              <h1 className="text-3xl lg:text-4xl xl:text-5xl font-extrabold text-[#F8C62F]">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold leading-tight text-[#F8C62F]">
                 Invest in the Future.
               </h1>
             </div>
-            <p className="my-4 text-white lg:text-lg">
+            <p className="my-4 text-white/80 text-base sm:text-lg">
               As a Graphothon sponsor, you support meaningful challenges that
               spark creativity, inspire problem-solving, and empower
               future-ready innovators. Your involvement drives real, measurable
@@ -124,12 +120,12 @@ const Sponsor = () => {
       </section>
 
       {/* Our Sponsors */}
-      <section className="flex justify-center mt-20">
-        <div className="px-4 lg:px-8 pt-5 pb-10 w-full max-w-[1280px]">
+      <section className="flex justify-center mt-12">
+        <div className="px-4 lg:px-8 pt-5 w-full max-w-[1280px]">
           <h1 className="text-xl font-extrabold w-full text-center mb-4 md:text-2xl lg:text-3xl">
             Truster by our Partners
           </h1>
-          <div className="w-full overflow-hidden py-6 relative">
+          <div className="w-full overflow-hidden py-3 relative">
             {/* left fade */}
             <div className="pointer-events-none absolute inset-y-0 left-0 w-15 sm:w-20 md:w-35 lg:50 xl:w-100 bg-gradient-to-r from-white to-transparent z-20" />
 
@@ -156,8 +152,8 @@ const Sponsor = () => {
 
       {/* Benefits of Sponsoring Us section */}
       <section className="flex justify-center">
-        <div className="mx-4 lg:mx-8 mt-[100px] pb-5 flex flex-col gap-10 lg:gap-20 w-full max-w-[1280px]">
-          <h1 className="text-xl font-extrabold w-full text-center mb-4 md:text-2xl lg:text-3xl">
+        <div className="mx-4 lg:mx-8 mt-[70px] pb-5 flex flex-col gap-10 lg:gap-20 w-full max-w-[1280px]">
+          <h1 className="text-xl font-extrabold w-full text-center md:text-2xl lg:text-3xl">
             Benefits of Sponsoring Us section
           </h1>
           <motion.div
@@ -178,7 +174,7 @@ const Sponsor = () => {
               <h2 className="text-lg font-bold md:text-2xl lg:text-3xl">
                 Amplified Brand Visibility
               </h2>
-              <p className="text-gray-700 my-2">
+              <p className="text-gray-700 my-2 xl:text-lg">
                 Your brand is highlighted across all Graphothon platforms,
                 promotional campaigns, digital assets, and event experiences.
                 Sponsoring with Graphura positions you directly in front of
@@ -186,7 +182,7 @@ const Sponsor = () => {
                 leaders, boosting your reach and credibility.
               </p>
             </div>
-            <div className="rounded-xl overflow-hidden max-w-[500px] max-h-[300px]">
+            <div className="rounded-xl overflow-hidden max-w-[500px] max-h-[300px] xl:max-w-[620px] xl:max-h-[400px]">
               <img
                 src="https://res.cloudinary.com/drq2a0262/image/upload/v1766745498/Gemini_Generated_Image_pdxa4npdxa4npdxa_fevl3n.png"
                 alt="brand-visibility-image"
@@ -211,14 +207,14 @@ const Sponsor = () => {
               <h2 className="text-lg font-bold md:text-2xl lg:text-3xl">
                 Direct Access to Emerging Talent
               </h2>
-              <p className="text-gray-700 my-2">
+              <p className="text-gray-700 my-2 xl:text-lg">
                 Engage closely with young creators who bring fresh perspectives
                 and problem-solving skills.As a sponsor, you gain early access
                 to top performers, potential hires, and future changemakers
                 ready to contribute to real-world innovation.
               </p>
             </div>
-            <div className="rounded-xl overflow-hidden max-w-[500px] max-h-[300px]">
+            <div className="rounded-xl overflow-hidden max-w-[500px] max-h-[300px] xl:max-w-[620px] xl:max-h-[400px]">
               <img
                 src="https://res.cloudinary.com/drq2a0262/image/upload/v1766746360/Gemini_Generated_Image_sqbl4sqbl4sqbl4s_twd3uo.png"
                 alt="emerging-talent-image"
@@ -243,14 +239,14 @@ const Sponsor = () => {
               <h2 className="text-lg font-bold md:text-2xl lg:text-3xl">
                 Meaningful Impact Through Innovation
               </h2>
-              <p className="text-gray-700 my-2">
+              <p className="text-gray-700 my-2 xl:text-lg">
                 Your sponsorship fuels real-world problem-solving by supporting
                 impactful challenges and collaborative learning. Together, we
                 enable participants to build transformative solutions, shaping
                 both community growth and the future of technology.
               </p>
             </div>
-            <div className="rounded-xl overflow-hidden max-w-[500px] max-h-[300px]">
+            <div className="rounded-xl overflow-hidden max-w-[500px] max-h-[300px] xl:max-w-[620px] xl:max-h-[400px]">
               <img
                 src="https://res.cloudinary.com/drq2a0262/image/upload/v1766746974/Gemini_Generated_Image_hfpvb8hfpvb8hfpv_ppoglk.png"
                 alt="innovation-image"
@@ -261,7 +257,7 @@ const Sponsor = () => {
       </section>
 
       {/* Why Sponsors Love Working With Us */}
-      <section className="bg-gray-200 mt-20 pb-10 flex justify-center">
+      <section className="bg-gray-200 mt-10 pb-10 flex justify-center">
         <div className="mx-4 lg:mx-8 max-w-[1280px] w-full">
           <h1 className="text-xl font-extrabold w-full text-center pt-10 mb-8 md:text-2xl lg:text-3xl">
             Why Sponsors Love Working With Us

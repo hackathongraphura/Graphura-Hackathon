@@ -12,7 +12,7 @@ const Login = () => {
   /* ================= NOT LOGGED IN ================= */
   return (
     <Link to="/login">
-      <button className="bg-yellow-400 hover:bg-yellow-500 transition text-gray-900 font-semibold px-6 py-2 rounded-full">
+      <button className="bg-yellow-400 hover:bg-yellow-500 transition text-gray-900 font-semibold px-6 py-2 rounded-full cursor-pointer">
         Login
       </button>
     </Link>
