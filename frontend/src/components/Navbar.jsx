@@ -175,7 +175,7 @@ const Navbar = () => {
               )}
             </div>
           ))}
-{/* dashboard button */}
+
           {token && (
             <Link to={dashboardPath} onClick={() => setMobileOpen(false)}>
               <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-[#03594E] to-[#1AB69D] text-white font-semibold px-6 py-2.5 rounded-lg w-full shadow-md">
@@ -190,6 +190,7 @@ const Navbar = () => {
               <button className="mt-4 cursor-pointer bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-6 py-2 rounded-lg w-full">
                 Login
               </button>
+        
             </Link>
           )}
         </div>
