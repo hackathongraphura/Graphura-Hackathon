@@ -4,18 +4,18 @@ import Footer from "../Footer";
 
 const GeneralRule = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#03594E] via-[#03594E] to-[#1AB69D]">
+    <section className="relative overflow-hidden">
       <Navbar />
       {/* ================= HEADER ================= */}
-      <div className="relative min-h-[65vh] flex items-center justify-center text-center px-6">
+      <div className="relative min-h-[65vh] flex items-center justify-center text-center px-6 bg-gradient-to-br from-[#03594E] via-[#03594E] to-[#1AB69D]">
         {/* Background glow */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 left-10 w-72 h-72 bg-[#1AB69D]/20 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#F8C62F]/10 rounded-full blur-3xl animate-pulse" />
         </div>
 
-        <div className="relative z-10 max-w-4xl animate-fade-in">
-          <h1 className="text-white text-5xl lg:text-6xl font-bold">
+        <div className="relative z-10 max-w-4xl animate-fade-in pt-25 pb-5">
+          <h1 className="text-white text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold leading-tight">
             Online Hackathon Rules & Guidelines
           </h1>
 
@@ -25,7 +25,7 @@ const GeneralRule = () => {
             </span>
           </p>
 
-          <p className="mt-6 text-white/80 text-base leading-relaxed">
+          <p className="mt-6 text-white/80 text-base sm:text-lg leading-relaxed">
             These rules govern all online hackathons conducted by Graphura India
             Private Limited. By registering and participating, you agree to
             comply with these rules, Graphura’s Terms of Service, and Privacy
@@ -46,7 +46,7 @@ const GeneralRule = () => {
       </div>
 
       {/* ================= CONTENT ================= */}
-      <div className="bg-white py-16 px-6">
+      <div className="bg-white py-12 px-6">
         <div className="max-w-5xl mx-auto text-gray-700 space-y-10 leading-relaxed">
           {/* 1 */}
           <div>

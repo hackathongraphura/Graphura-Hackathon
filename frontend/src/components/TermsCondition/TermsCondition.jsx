@@ -4,18 +4,18 @@ import Footer from "../Footer";
 
 const TermsCondition = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#03594E] via-[#03594E] to-[#1AB69D]">
+    <section className="relative overflow-hidden">
       <Navbar />
       {/* ================= HEADER ================= */}
-      <div className="relative min-h-[65vh] flex items-center justify-center text-center px-6">
+      <div className="relative min-h-[65vh] flex items-center justify-center text-center px-6 bg-gradient-to-br from-[#03594E] via-[#03594E] to-[#1AB69D]">
         {/* Background glow */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 left-10 w-72 h-72 bg-[#1AB69D]/20 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#F8C62F]/10 rounded-full blur-3xl animate-pulse" />
         </div>
 
-        <div className="relative z-10 max-w-4xl animate-fade-in">
-          <h1 className="text-white text-5xl lg:text-6xl font-bold mt-10">
+        <div className="relative z-10 max-w-4xl animate-fade-in pt-15 pb-5">
+          <h1 className="text-white text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold leading-tight mt-10">
             Term and Condition
           </h1>
 
@@ -29,7 +29,7 @@ const TermsCondition = () => {
             Last Updated: June 20, 2025
           </p>
 
-          <p className="mt-6 text-white/80 text-base leading-relaxed">
+          <p className="mt-6 text-white/80 text-base sm:text-lg leading-relaxed">
             Graphura India Private Limited values individuals&apos; privacy and
             actively seeks to preserve the privacy rights of those who share
             information with us. The following information explains the Internet
@@ -52,7 +52,7 @@ const TermsCondition = () => {
       </div>
 
       {/* ================= CONTENT ================= */}
-      <div className="bg-white py-16 px-6">
+      <div className="bg-white py-10 px-6">
         <div className="max-w-5xl mx-auto text-gray-700 space-y-10 leading-relaxed">
           {/* 1 */}
           <div>

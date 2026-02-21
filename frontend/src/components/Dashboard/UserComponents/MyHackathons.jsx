@@ -101,7 +101,7 @@ const MyHackathons = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 p-4 sm:px-6 py-10 lg:px-8">
       <div className="max-w-7xl mx-auto space-y-8">
 
         <div className="space-y-2">

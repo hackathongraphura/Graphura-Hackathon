@@ -101,7 +101,7 @@ const ExploreEvents = () => {
   }
 
   return (
-    <div className="min-h-screen p-6 bg-[#F5F7F9]">
+    <div className="min-h-screen px-6 py-10 bg-[#F5F7F9]">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-6">

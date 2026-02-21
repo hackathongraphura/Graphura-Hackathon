@@ -32,7 +32,7 @@ const TestimonialSection = () => {
   const current = reviews[currentIndex];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-teal-50 overflow-hidden">
+    <section className="py-10 bg-gradient-to-br from-slate-50 via-blue-50 to-teal-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
 
         {/* Heading */}
@@ -89,14 +89,14 @@ const TestimonialSection = () => {
           {/* Navigation Buttons */}
           <button
             onClick={prev}
-            className="absolute left-4 md:-left-6 top-1/2 -translate-y-1/2 bg-white w-12 h-12 rounded-full shadow-xl flex items-center justify-center text-teal-600 hover:bg-teal-600 hover:text-white transition"
+            className="absolute cursor-pointer left-4 md:-left-6 top-1/2 -translate-y-1/2 bg-white w-12 h-12 rounded-full shadow-xl flex items-center justify-center text-teal-600 hover:bg-teal-600 hover:text-white transition"
           >
             <ChevronLeft />
           </button>
 
           <button
             onClick={next}
-            className="absolute right-4 md:-right-6 top-1/2 -translate-y-1/2 bg-white w-12 h-12 rounded-full shadow-xl flex items-center justify-center text-teal-600 hover:bg-teal-600 hover:text-white transition"
+            className="absolute cursor-pointer right-4 md:-right-6 top-1/2 -translate-y-1/2 bg-white w-12 h-12 rounded-full shadow-xl flex items-center justify-center text-teal-600 hover:bg-teal-600 hover:text-white transition"
           >
             <ChevronRight />
           </button>
