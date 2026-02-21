@@ -233,7 +233,7 @@ const Footer = () => {
               <div className="flex items-center gap-3">
                 <img src="/Hackathon.png" alt="" />
               </div>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed pl-2">
                 Graphura - Where Hackathons Meet Esports.
               </p>
               <Link
@@ -293,7 +293,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    to="/about"
+                    to="/contact"
                     className="text-gray-700 hover:text-teal-600 transition-colors"
                   >
                     Contact

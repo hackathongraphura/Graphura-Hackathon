@@ -229,7 +229,7 @@ const Career = () => {
               impact.
             </p>
             <button
-              onClick={() => navigate("/all-blog")}
+              onClick={() => navigate("/blog")}
               className="border border-[#fab031] text-[#fab031] hover:bg-[#fab031] py-2 px-4 rounded-md hover:text-white font-medium mt-5 cursor-pointer active:bg-[#fab031] active:text-white transition-transform duration-200 hover:scale-105 hover:shadow-lg"
             >
               Learn more about Career

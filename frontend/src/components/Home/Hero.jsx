@@ -70,7 +70,7 @@ export default function Hero() {
                   </svg>
                 </button>
                 <button
-                  onClick={() => navigate("/blog")}
+                  onClick={() => navigate("/hackathons")}
                   className="bg-white/10 cursor-pointer backdrop-blur-sm text-white px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold border-2 border-white/30 hover:bg-white/20 hover:border-white/50 transition-all flex items-center justify-center gap-2"
                 >
                   <Play className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
