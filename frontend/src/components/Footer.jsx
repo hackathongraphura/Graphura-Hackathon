@@ -56,7 +56,7 @@ const Footer = () => {
   const spiralTransform = `translateY(${Math.min(scrollY * 0.3, 200)}px)`;
 
   return (
-    <footer className="relative overflow-visible mt-40">
+    <footer className="relative overflow-visible mt-30">
       {/* Newsletter Section - Positioned to overlap */}
       <div className="absolute left-0 right-0 -top-20 z-30 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
@@ -103,7 +103,7 @@ const Footer = () => {
                     <button
                       onClick={handleSubscribe}
                       disabled={loading}
-                      className="bg-teal-700 hover:bg-teal-600 text-white px-4 sm:px-6 transition-colors disabled:opacity-60 flex-shrink-0"
+                      className="bg-teal-700 cursor-pointer hover:bg-teal-600 text-white px-4 sm:px-6 transition-colors disabled:opacity-60 flex-shrink-0"
                       aria-label="Subscribe"
                     >
                       {loading ? (
@@ -145,7 +145,7 @@ const Footer = () => {
 
       {/* Main Footer Content */}
       <div
-        className="relative pt-36 pb-20"
+        className="relative pt-40 pb-20"
         style={{
           background:
             "linear-gradient(135deg, #e8f4f8 0%, #fce4ec 25%, #fff9e6 50%, #fce4ec 75%, #e8f4f8 100%)",
@@ -234,11 +234,11 @@ const Footer = () => {
                 <img src="/Hackathon.png" alt="" />
               </div>
               <p className="text-gray-700 leading-relaxed">
-                Graphura — Where Hackathons Meet Esports.
+                Graphura - Where Hackathons Meet Esports.
               </p>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 bg-teal-700 hover:bg-teal-800 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+                className="cursor-pointer inline-flex items-center gap-2 bg-teal-700 hover:bg-teal-800 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
               >
                 Contact Us
                 <span>→</span>
@@ -387,9 +387,9 @@ const Footer = () => {
                 <li className="text-gray-600">
                   <span className="font-semibold text-gray-800">Location:</span>{" "}
                   <a
-                    href="https://www.google.com/maps"
+                    href="https://www.google.com/maps/search/?api=1&query=Graphura+India+Private+Limited+near+RSF+Pataudi+Gurgaon+Haryana+122503"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="hover:text-teal-600 transition-colors"
                   >
                     Graphura India Private Limited, near RSF, Pataudi, Gurgaon,
