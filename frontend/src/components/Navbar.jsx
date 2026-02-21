@@ -187,7 +187,7 @@ const Navbar = () => {
 
           {!token && (
             <Link to="/login" onClick={() => setMobileOpen(false)}>
-              <button className="mt-4 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-6 py-2 rounded-lg w-full">
+              <button className="mt-4 cursor-pointer bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-6 py-2 rounded-lg w-full">
                 Login
               </button>
             </Link>
