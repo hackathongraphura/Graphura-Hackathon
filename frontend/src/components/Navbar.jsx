@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import { IoIosArrowDown, IoMdMenu, IoMdClose } from "react-icons/io";
 import { LayoutDashboard } from "lucide-react";
@@ -17,16 +17,19 @@ const Navbar = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  // Check if user is logged in and get role
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
-  
-  // Determine dashboard path based on role
-  let dashboardPath = "/user/dashboard";
 
+  let dashboardPath = "/user/dashboard";
   if (role === "admin") dashboardPath = "/admin/dashboard";
   else if (role === "judge") dashboardPath = "/judge/dashboard";
-  
+
+  // Helper to get active class for nav links
+  const navLinkClass = ({ isActive }) =>
+    isActive
+      ? "text-yellow-400 transition"
+      : "hover:text-yellow-400 transition";
+
   return (
     <>
       <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
@@ -37,14 +40,14 @@ const Navbar = () => {
           </Link>
 
           {/* DESKTOP MENU */}
-          <div className="hidden md:flex items-center gap-8 text-[var(--it-text-body)] font-medium">
+          <div className="hidden lg:flex items-center gap-8 text-[var(--it-text-body)] font-medium">
             {navItems.map((item, index) => (
               <div key={index} className="relative">
                 {item.dropdown ? (
                   <div
                     onMouseEnter={() => setOpenDropdown(index)}
                     onMouseLeave={() => setOpenDropdown(null)}
-                    className="cursor-pointer flex items-center gap-1 hover:text-[var(--it-theme-2)]"
+                    className="cursor-pointer flex items-center gap-1 hover:text-yellow-400"
                   >
                     {item.name}
                     <IoIosArrowDown size={16} />
@@ -54,12 +57,9 @@ const Navbar = () => {
                         <ul className="flex flex-col gap-2 text-sm text-black">
                           {item.dropdown.map((sub, i) => (
                             <li key={i}>
-                              <Link
-                                to={sub.path}
-                                className="hover:text-yellow-300 transition"
-                              >
+                              <NavLink to={sub.path} className={navLinkClass}>
                                 {sub.name}
-                              </Link>
+                              </NavLink>
                             </li>
                           ))}
                         </ul>
@@ -67,33 +67,33 @@ const Navbar = () => {
                     )}
                   </div>
                 ) : (
-                  <Link
+                  <NavLink
                     to={item.path}
-                    className="hover:text-yellow-300 transition"
+                    // For Home ("/"), use exact match to avoid it always being active
+                    end={item.path === "/"}
+                    className={navLinkClass}
                   >
                     {item.name}
-                  </Link>
+                  </NavLink>
                 )}
               </div>
             ))}
 
-            {/* DASHBOARD BUTTON - Only show if logged in */}
             {token && (
               <Link to={dashboardPath}>
-                <button className="flex items-center gap-2 bg-gradient-to-r from-[#03594E] to-[#1AB69D] hover:scale-105 text-white font-semibold px-5 py-2 rounded-full transition-transform shadow-md">
+                <button className="flex items-center gap-2 bg-gradient-to-r from-[#03594E] to-[#1AB69D] hover:scale-105 text-white font-semibold px-5 py-2 rounded-full transition-transform shadow-md cursor-pointer">
                   <LayoutDashboard size={18} />
                   Dashboard
                 </button>
               </Link>
             )}
 
-            {/* LOGIN BUTTON */}
             <Login />
           </div>
 
           {/* MOBILE TOGGLER */}
           <button
-            className="md:hidden text-3xl text-gray-800"
+            className="lg:hidden text-3xl text-gray-800"
             onClick={() => setMobileOpen(true)}
           >
             <IoMdMenu />
@@ -151,31 +151,31 @@ const Navbar = () => {
                   {openDropdown === index && (
                     <div className="ml-4 mt-2 flex flex-col gap-2 text-sm">
                       {item.dropdown.map((sub, i) => (
-                        <Link
+                        <NavLink
                           key={i}
                           to={sub.path}
                           onClick={() => setMobileOpen(false)}
-                          className="hover:text-[var(--it-theme-2)]"
+                          className={navLinkClass}
                         >
                           {sub.name}
-                        </Link>
+                        </NavLink>
                       ))}
                     </div>
                   )}
                 </>
               ) : (
-                <Link
+                <NavLink
                   to={item.path}
+                  end={item.path === "/"}
                   onClick={() => setMobileOpen(false)}
-                  className="hover:text-[var(--it-theme-2)]"
+                  className={navLinkClass}
                 >
                   {item.name}
-                </Link>
+                </NavLink>
               )}
             </div>
           ))}
 
-          {/* MOBILE DASHBOARD BUTTON - Only show if logged in */}
           {token && (
             <Link to={dashboardPath} onClick={() => setMobileOpen(false)}>
               <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-[#03594E] to-[#1AB69D] text-white font-semibold px-6 py-2.5 rounded-lg w-full shadow-md">
@@ -185,7 +185,6 @@ const Navbar = () => {
             </Link>
           )}
 
-          {/* MOBILE LOGIN BUTTON - Only show if not logged in */}
           {!token && (
             <Link to="/login" onClick={() => setMobileOpen(false)}>
               <button className="mt-4 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-6 py-2 rounded-lg w-full">
