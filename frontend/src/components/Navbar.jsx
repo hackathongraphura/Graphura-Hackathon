@@ -175,7 +175,7 @@ const Navbar = () => {
               )}
             </div>
           ))}
-
+{/* dashboard button */}
           {token && (
             <Link to={dashboardPath} onClick={() => setMobileOpen(false)}>
               <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-[#03594E] to-[#1AB69D] text-white font-semibold px-6 py-2.5 rounded-lg w-full shadow-md">
