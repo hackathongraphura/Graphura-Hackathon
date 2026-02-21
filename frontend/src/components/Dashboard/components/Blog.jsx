@@ -95,7 +95,7 @@ const handleDelete = async (blogId) => {
                 <BookOpen className="text-white" size={32} />
               </div>
               <div>
-                <h1 className="text-4xl font-bold bg-gradient-to-br from-[#03594E] via-[#03594E] to-[#1AB69D] bg-clip-text text-transparent">
+                <h1 className="text-2xl font-bold bg-gradient-to-br from-[#03594E] via-[#03594E] to-[#1AB69D] bg-clip-text text-transparent">
                   Blog Management
                 </h1>
                 <p className="text-gray-600 mt-1">Create, edit and manage your blog content</p>
@@ -151,13 +151,13 @@ const handleDelete = async (blogId) => {
                 />
               </div>
 
-              <div className="flex gap-3">
+              <div className="flex gap-3 flex-col md:flex-row">
                 <div className="relative">
                   <Tag className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
                   <select
                     value={selectedCategory}
                     onChange={(e) => setSelectedCategory(e.target.value)}
-                    className="pl-10 pr-8 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 appearance-none bg-white cursor-pointer min-w-[160px]"
+                    className="pl-9 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 appearance-none bg-white cursor-pointer min-w-[130px]"
                   >
                     {categories.map(cat => (
                       <option key={cat} value={cat}>

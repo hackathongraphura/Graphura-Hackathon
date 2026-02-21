@@ -254,7 +254,7 @@ const AdminUserRegistrations = () => {
               <select
                 value={selectedUniversity}
                 onChange={e => setSelectedUniversity(e.target.value)}
-                className="pl-11 pr-8 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none bg-white cursor-pointer min-w-[200px]"
+                className="pl-11 pr-1 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none bg-white cursor-pointer min-w-[140px]"
               >
                 <option value="">All Universities</option>
                 {universities.map(u => (
