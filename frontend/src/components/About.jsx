@@ -122,7 +122,7 @@ export default function About() {
   const darkLogos = [6, 7, 8, 9, 10]; // logos that need dark card 
 
   return (
-    <>
+    <div className="overflow-x-hidden">
       {/* HEADER */}
       <AboutPageSEO />
       <Navbar />
@@ -551,6 +551,6 @@ export default function About() {
 
       {/* FOOTER */}
       <Footer />
-    </>
+    </div>
   );
 }

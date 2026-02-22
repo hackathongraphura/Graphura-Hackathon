@@ -9,7 +9,7 @@ import GraphuraSEO from "./SEO/GraphuraSEO";
 
 const Home = () => {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <GraphuraSEO />
       <Navbar />
       <Hero />

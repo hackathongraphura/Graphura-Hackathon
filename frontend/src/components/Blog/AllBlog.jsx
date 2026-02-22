@@ -46,7 +46,7 @@ const AllBlog = () => {
   };
 
   return (
-    <div className="bg-[#f8fafb]">
+    <div className="bg-[#f8fafb] overflow-x-hidden">
       <GraphuraBlogSEO />
       <Navbar />
       {/* ================= HERO SECTION ================= */}

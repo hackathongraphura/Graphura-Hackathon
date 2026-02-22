@@ -6,20 +6,20 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 
 /* ================= STATIC SIDEBAR DATA (UNCHANGED) ================= */
 
-const categories = [
-  { name: "Education", count: 7 },
-  { name: "Business", count: 6 },
-  { name: "Technology", count: 5 },
-  { name: "Design", count: 4 },
-  { name: "Innovation", count: 8 },
-];
+// const categories = [
+//   { name: "Education", count: 7 },
+//   { name: "Business", count: 6 },
+//   { name: "Technology", count: 5 },
+//   { name: "Design", count: 4 },
+//   { name: "Innovation", count: 8 },
+// ];
 
 const latestBlogs = [
   {
@@ -52,30 +52,56 @@ const BlogDetails = () => {
   const [blog, setBlog] = useState(null);
   const [similarBlogs, setSimilarBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [allBlogs, setAllBlogs] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [filteredBlogs, setFilteredBlogs] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
 
   /* ================= FETCH BLOG + SIMILAR ================= */
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // 1. Fetch current blog
+        // 1️⃣ Fetch current blog
         const blogRes = await axios.get(`${API_URL}/${id}`);
         const currentBlog = blogRes.data.data;
         setBlog(currentBlog);
 
-        // 2. Fetch all blogs
+        // 2️⃣ Fetch all blogs
         const allRes = await axios.get(API_URL);
-        const allBlogs = allRes.data.data || [];
+        const blogs = allRes.data.data || [];
+        setAllBlogs(blogs);
 
-        // 3. Filter similar blogs
-        const filtered = allBlogs
-          .filter(
-            (b) =>
-              b._id !== currentBlog._id && b.category === currentBlog.category
-          )
-          .slice(0, 3);
+        // 3️⃣ Generate categories dynamically
+        const categoryMap = {};
+
+        blogs.forEach((b) => {
+          if (categoryMap[b.category]) {
+            categoryMap[b.category]++;
+          } else {
+            categoryMap[b.category] = 1;
+          }
+        });
+
+        const categoryArray = Object.keys(categoryMap).map((cat) => ({
+          name: cat,
+          count: categoryMap[cat],
+        }));
+
+        setCategories(categoryArray);
+
+        // 4️⃣ Similar blogs
+        const filtered = blogs.filter(
+          (b) =>
+            b._id !== currentBlog._id && b.category === currentBlog.category,
+        );
 
         setSimilarBlogs(filtered);
+
+        // Default latest blogs
+        setFilteredBlogs(blogs.slice(0, 3));
       } catch (err) {
         console.error("Failed to fetch blog data", err);
       } finally {
@@ -85,6 +111,51 @@ const BlogDetails = () => {
 
     fetchData();
   }, [id]);
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+
+    const filtered = allBlogs
+      .filter((blog) => blog.category === category)
+      .slice(0, 3);
+
+    setFilteredBlogs(filtered);
+  };
+
+  // const handleCategoryClick = (category) => {
+  //   setSelectedCategory(category);
+  // };
+
+  useEffect(() => {
+    let filtered = [...allBlogs];
+
+    // 🔎 Apply Category Filter
+    if (selectedCategory) {
+      filtered = filtered.filter((blog) => blog.category === selectedCategory);
+    }
+
+    // 🔍 Apply Search Filter
+    if (searchTerm.trim() !== "") {
+      const lowerSearch = searchTerm.toLowerCase();
+
+      filtered = filtered.filter((blog) => {
+        const inTitle = blog.title.toLowerCase().includes(lowerSearch);
+        const inCategory = blog.category.toLowerCase().includes(lowerSearch);
+
+        const inSections =
+          Array.isArray(blog.sections) &&
+          blog.sections.some(
+            (section) =>
+              typeof section.content === "string" &&
+              section.content.toLowerCase().includes(lowerSearch),
+          );
+
+        return inTitle || inCategory || inSections;
+      });
+    }
+
+    setFilteredBlogs(filtered.slice(0, 3));
+  }, [searchTerm, selectedCategory, allBlogs]);
 
   const handleShare = (platform) => {
     const url = window.location.href;
@@ -120,7 +191,7 @@ const BlogDetails = () => {
   if (!blog) {
     return <p className="text-center py-32">Blog not found</p>;
   }
-
+  const limitedSimilarBlogs = similarBlogs.slice(0, 3);
   return (
     <div className="bg-white">
       <Navbar />
@@ -143,12 +214,22 @@ const BlogDetails = () => {
               <input
                 type="text"
                 placeholder="Search Keywords"
-                className="w-full px-4 py-3 rounded-lg outline-none"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full px-4 py-3 rounded-lg outline-none bg-gray-50 focus:bg-white transition"
               />
               <FaSearch className="absolute right-4 top-1/2 -translate-y-1/2 text-emerald-700" />
             </div>
           </div>
-
+          <button
+            onClick={() => {
+              setSelectedCategory(null);
+              setSearchTerm("");
+            }}
+            className="px-4 py-2 text-sm font-medium text-emerald-700 bg-emerald-50 rounded-lg border border-emerald-200 hover:bg-emerald-700 hover:text-white hover:border-emerald-700 transition-all duration-300 shadow-sm hover:shadow-md"
+          >
+            Clear Filters
+          </button>
           {/* Categories */}
           <div className="bg-gray-100 p-6 rounded-2xl">
             <h3 className="text-xl font-semibold mb-4">Category</h3>
@@ -156,7 +237,13 @@ const BlogDetails = () => {
               {categories.map((cat, i) => (
                 <li
                   key={i}
-                  className="flex justify-between bg-white px-4 py-2 rounded-lg hover:bg-emerald-700 hover:text-white cursor-pointer transition"
+                  onClick={() => handleCategoryClick(cat.name)}
+                  className={`flex justify-between px-4 py-2 rounded-lg cursor-pointer transition
+        ${
+          selectedCategory === cat.name
+            ? "bg-emerald-700 text-white"
+            : "bg-white hover:bg-emerald-700 hover:text-white"
+        }`}
                 >
                   <span>{cat.name}</span>
                   <span>{cat.count}</span>
@@ -167,19 +254,24 @@ const BlogDetails = () => {
 
           {/* Latest Blogs */}
           <div className="bg-gray-100 p-6 rounded-2xl">
-            <h3 className="text-xl font-semibold mb-4">Latest Blogs</h3>
+            <h3 className="text-xl font-semibold mb-4">
+              {selectedCategory ? `${selectedCategory} Blogs` : "Latest Blogs"}
+            </h3>
+
             <div className="space-y-4">
-              {latestBlogs.map((blog) => (
-                <div key={blog.id} className="flex gap-4">
+              {filteredBlogs.map((blog) => (
+                <div key={blog._id} className="flex gap-4">
                   <img
                     src={blog.image}
-                    alt=""
+                    alt={blog.title}
                     className="w-20 h-20 rounded-lg object-cover"
                   />
                   <div>
-                    <p className="text-sm text-gray-500">{blog.date}</p>
+                    <p className="text-sm text-gray-500">
+                      {new Date(blog.publishedAt).toDateString()}
+                    </p>
                     <Link
-                      to="/blog"
+                      to={`/blog/${blog._id}`}
                       className="font-medium hover:text-emerald-700"
                     >
                       {blog.title}
@@ -213,7 +305,7 @@ const BlogDetails = () => {
               if (section.type === "heading") {
                 return (
                   <h3 key={index} className="text-2xl font-semibold">
-                     • {section.content}
+                    • {section.content}
                   </h3>
                 );
               }
@@ -280,29 +372,45 @@ const BlogDetails = () => {
           </div>
 
           {/* ================= SIMILAR BLOGS ================= */}
-          {similarBlogs.length > 0 && (
+          {limitedSimilarBlogs.length > 0 && (
             <div className="pt-16">
               <h2 className="text-3xl font-bold mb-8">Similar Blogs</h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {similarBlogs.map((b) => (
+              <div
+                className={`grid gap-8 
+        ${
+          limitedSimilarBlogs.length === 1
+            ? "grid-cols-1"
+            : limitedSimilarBlogs.length === 2
+              ? "grid-cols-1 md:grid-cols-2"
+              : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+        }`}
+              >
+                {limitedSimilarBlogs.map((b) => (
                   <div
                     key={b._id}
-                    className="bg-gray-100 rounded-2xl overflow-hidden"
+                    onClick={() => navigate(`/blog/${b._id}`)}
+                    className="cursor-pointer bg-gray-100 rounded-2xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
                   >
                     <img
                       src={b.image}
                       alt={b.title}
-                      className="w-full h-52 object-cover"
+                      className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300"
                     />
+
                     <div className="p-5">
                       <p className="text-sm text-gray-500">
                         {new Date(b.publishedAt).toDateString()}
                       </p>
-                      <h4 className="font-semibold mb-3">{b.title}</h4>
+
+                      <h4 className="font-semibold mb-3 group-hover:text-emerald-700 transition">
+                        {b.title}
+                      </h4>
+
                       <Link
                         to={`/blog/${b._id}`}
-                        className="text-emerald-700 font-medium"
+                        onClick={(e) => e.stopPropagation()}
+                        className="text-emerald-700 font-medium hover:underline"
                       >
                         More Details →
                       </Link>

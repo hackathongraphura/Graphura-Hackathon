@@ -94,6 +94,7 @@ const PublicRoute = ({ children }) => {
 };
 function App() {
   return (
+    <div className="overflow-x-hidden">
     <Router>
       {/* <Navbar /> */}
       <ScrollToTop />
@@ -176,6 +177,7 @@ function App() {
         <Route path="*" element={<Error404Page />} />
       </Routes>
     </Router>
+    </div>
   );
 }
 

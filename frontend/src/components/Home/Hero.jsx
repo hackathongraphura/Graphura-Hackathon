@@ -96,7 +96,7 @@ export default function Hero() {
               </div>
 
               {/* Spinning decorative ring */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none -left-15">
                 <div
                   className="border-4 border-white/10 rounded-full spin-slow-animation"
                   style={{ width: "350px", height: "350px" }}
