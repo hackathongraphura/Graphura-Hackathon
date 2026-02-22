@@ -149,7 +149,7 @@ const Testimonials = () => {
           <button
             onClick={submitReview}
             disabled={loading || !text.trim()}
-            className="w-full bg-gradient-to-r from-[#03594E] to-[#1AB69D] text-white px-8 py-4 rounded-xl flex items-center justify-center gap-3 font-semibold shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+            className="w-full cursor-pointer bg-gradient-to-r from-[#03594E] to-[#1AB69D] text-white px-8 py-4 rounded-xl flex items-center justify-center gap-3 font-semibold shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
           >
             {loading ? (
               <>

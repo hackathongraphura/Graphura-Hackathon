@@ -236,13 +236,13 @@ const Footer = () => {
               <p className="text-gray-700 leading-relaxed pl-2">
                 Graphura - Where Hackathons Meet Esports.
               </p>
-              <Link
+              {/* <Link
                 to="/contact"
                 className="cursor-pointer inline-flex items-center gap-2 bg-teal-700 hover:bg-teal-800 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
               >
                 Contact Us
                 <span>→</span>
-              </Link>
+              </Link> */}
             </div>
 
             {/* Column 2 - Useful Links */}

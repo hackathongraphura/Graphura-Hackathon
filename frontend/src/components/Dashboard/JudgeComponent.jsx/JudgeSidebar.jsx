@@ -6,14 +6,14 @@ const JudgeSidebar = ({ active, setActive }) => {
       <nav className="space-y-2 px-4">
         <button
           onClick={() => setActive("dashboard")}
-          className={`sidebar-btn ${active === "dashboard" && "active"}`}
+          className={`sidebar-btn cursor-pointer ${active === "dashboard" && "active"}`}
         >
           Dashboard
         </button>
 
         <button
           onClick={() => setActive("hackathons")}
-          className={`sidebar-btn ${active === "hackathons" && "active"}`}
+          className={`sidebar-btn cursor-pointer ${active === "hackathons" && "active"}`}
         >
           Hackathons
         </button>

@@ -486,7 +486,7 @@ const SlidingAuthPage = () => {
                   className="mt-0.5 w-4 h-4 rounded border-2 border-gray-300 text-[#03594E] focus:ring-2 focus:ring-[#03594E]/20 cursor-pointer"
                 />
                 <span className="text-xs text-gray-700 group-hover:text-gray-900 transition-colors">
-                  I agree to <span className="font-semibold text-[#03594E]">Terms & Conditions</span>
+                  I agree to <a href="/terms&conditions" className="font-semibold text-[#03594E]">Terms & Conditions</a>
                 </span>
               </label>
 

@@ -65,29 +65,14 @@ const GeneralRule = () => {
             <h2 className="text-2xl font-bold text-[#03594E] mb-3">
               2. Definitions
             </h2>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>
-                <strong>Hackathon Organizer:</strong> Graphura India Private
-                Limited
-              </li>
-              <li>
-                <strong>Hackathon Platform:</strong> Online platform used to
-                host the event
-              </li>
-              <li>
-                <strong>Participant:</strong> Registered individual taking part
-              </li>
-              <li>
-                <strong>Team:</strong> Group collaborating on one submission
-              </li>
-              <li>
-                <strong>Submission:</strong> Final project submitted
-              </li>
-              <li>
-                <strong>Winning Submissions:</strong> Projects selected by
-                judges
-              </li>
-            </ul>
+            <div className="space-y-2">
+              <p><strong>2.1 Hackathon Organizer:</strong> Graphura India Private Limited</p>
+              <p><strong>2.2 Hackathon Platform:</strong> Online platform used to host the event</p>
+              <p><strong>2.3 Participant:</strong> Registered individual taking part</p>
+              <p><strong>2.4 Team:</strong> Group collaborating on one submission</p>
+              <p><strong>2.5 Submission:</strong> Final project submitted</p>
+              <p><strong>2.6 Winning Submissions:</strong> Projects selected by judges</p>
+            </div>
           </div>
 
           {/* 3 */}
@@ -95,17 +80,12 @@ const GeneralRule = () => {
             <h2 className="text-2xl font-bold text-[#03594E] mb-3">
               3. Eligibility
             </h2>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Participants must be 18 years or older</li>
-              <li>
-                Only residents of India may participate unless stated otherwise
-              </li>
-              <li>
-                Graphura employees may participate but are not eligible to win
-                prizes
-              </li>
-              <li>Valid identity and email are required</li>
-            </ul>
+            <div className="space-y-2">
+              <p><strong>3.1</strong> Participants must be 18 years or older</p>
+              <p><strong>3.2</strong> Only residents of India may participate unless stated otherwise</p>
+              <p><strong>3.3</strong> Graphura employees may participate but are not eligible to win prizes</p>
+              <p><strong>3.4</strong> Valid identity and email are required</p>
+            </div>
           </div>
 
           {/* 4 */}
@@ -125,11 +105,11 @@ const GeneralRule = () => {
             <h2 className="text-2xl font-bold text-[#03594E] mb-3">
               5. Team Formation
             </h2>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Teams may consist of 1–5 members</li>
-              <li>Each participant can join only one team</li>
-              <li>One member must act as the Team Leader</li>
-            </ul>
+             <div className="space-y-2">
+              <p><strong>5.1</strong> Teams may consist of 1–5 members</p>
+              <p><strong>5.2</strong> Each participant can join only one team</p>
+              <p><strong>5.3</strong> One member must act as the Team Leader</p>
+            </div>
           </div>
 
           {/* 6 */}

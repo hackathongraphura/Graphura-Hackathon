@@ -108,7 +108,7 @@ const UserSidebar = ({ active, setActive }) => {
                 setActive(key);
                 setIsMobileOpen(false);
               }}
-              className={`flex items-center gap-3 w-full px-4 py-3 rounded-xl text-left transition-all duration-200 relative group
+              className={`flex items-center cursor-pointer gap-3 w-full px-4 py-3 rounded-xl text-left transition-all duration-200 relative group
                 ${active === key
                   ? "text-white shadow-lg transform scale-[1.02]"
                   : "hover:bg-white hover:shadow-md text-gray-700"}
@@ -156,7 +156,7 @@ const UserSidebar = ({ active, setActive }) => {
               handleGoHome();
               setIsMobileOpen(false);
             }}
-            className={`flex items-center gap-3 w-full px-4 py-3 rounded-xl text-left font-semibold transition-all duration-200 group
+            className={`flex items-center cursor-pointer gap-3 w-full px-4 py-3 rounded-xl text-left font-semibold transition-all duration-200 group
               ${isCollapsed ? 'justify-center' : ''}
               bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-600 hover:from-blue-500 hover:to-indigo-600 hover:text-white hover:shadow-lg transform hover:scale-[1.02] active:scale-95
             `}
@@ -178,7 +178,7 @@ const UserSidebar = ({ active, setActive }) => {
               handleLogout();
               setIsMobileOpen(false);
             }}
-            className={`flex items-center gap-3 w-full px-4 py-3 rounded-xl text-left font-semibold transition-all duration-200 group
+            className={`flex items-center gap-3 cursor-pointer w-full px-4 py-3 rounded-xl text-left font-semibold transition-all duration-200 group
               ${isCollapsed ? 'justify-center' : ''}
               bg-gradient-to-r from-red-50 to-red-100 text-red-600 hover:from-red-500 hover:to-red-600 hover:text-white hover:shadow-lg transform hover:scale-[1.02] active:scale-95
             `}

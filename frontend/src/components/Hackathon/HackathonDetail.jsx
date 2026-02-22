@@ -133,8 +133,21 @@ const HackathonDetail = () => {
     }
   };
 
-  if (loading) return <p>Loading...</p>;
-  if (!data) return <p>Hackathon not found</p>;
+   if (loading)
+    return (
+      <div className="flex justify-center items-center min-h-[60vh]">
+        <div className="w-12 h-12 border-4 border-yellow-400 border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
+    
+  if (!data && !loading)
+  return (
+    <div className="flex justify-center items-center min-h-[60vh] text-center">
+      <p className="text-lg font-medium text-yellow-500">
+        Hackathon Not Found
+      </p>
+    </div>
+  );
 
   const list = ["Overview", "Rules & Guidlines", "Prizes", "Comments"];
 
@@ -157,7 +170,7 @@ const HackathonDetail = () => {
   };
 
   const handleRegister = async () => {
-    navigate("/signup");
+    navigate("/login");
   };
 
   const isEnrollmentClosed =
@@ -218,21 +231,21 @@ const HackathonDetail = () => {
       <Navbar />
       {/* Breadcrumb */}
       <div className="flex justify-center">
-        <nav className="text-sm text-gray-500 flex items-center gap-1 mx-4 lg:mx-8 my-2 w-full max-w-[1280px]">
-          <Link to="/" className="hover:text-black">
-            Home
-          </Link>
+      <nav className="text-sm text-gray-500 flex items-center gap-1 mx-4 lg:mx-8 my-2 w-full max-w-[1280px]">
+        <Link to="/" className="hover:text-black">
+          Home
+        </Link>
 
-          <span>/</span>
+        <span>/</span>
 
-          <Link to="/hackathons" className="hover:text-black">
-            Hackathons
-          </Link>
+        <Link to="/hackathons" className="hover:text-black">
+          Hackathons
+        </Link>
 
-          <span>/</span>
+        <span>/</span>
 
-          <span className="text-black font-medium">{data.title}</span>
-        </nav>
+        <span className="text-black font-medium">{data.title}</span>
+      </nav>
       </div>
 
       {/* hackathon details */}

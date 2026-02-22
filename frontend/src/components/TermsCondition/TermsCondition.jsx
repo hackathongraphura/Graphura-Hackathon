@@ -153,25 +153,23 @@ const TermsCondition = () => {
           </div>
 
           {/* 3 */}
-          <div>
+           <div>
             <h2 className="text-3xl font-bold text-[#03594E] mb-3">
               3. Participation in the Hackathon
             </h2>
 
             <h3 className="text-2xl font-bold text-yellow-600 mt-4 mb-3">
-              {" "}
               3.1 Eligibility
             </h3>
 
             <p className="mt-2 mb-2">
               The Hackathon is open to all individuals{" "}
-              <strong>18 years of age or older</strong> . (For events hosted in
+              <strong>18 years of age or older</strong>. (For events hosted in
               jurisdictions with different age rules, the corresponding minimum
               age requirements will apply.)
             </p>
 
             <h3 className="text-2xl font-bold text-yellow-600 mt-4 mb-3">
-              {" "}
               3.2 Application
             </h3>
 
@@ -180,35 +178,28 @@ const TermsCondition = () => {
               application/registration form provided by Graphura.
             </p>
 
-            <p className="mt-2 mb-2"> By submitting the application:</p>
+            <p className="mt-2 mb-2">By submitting the application:</p>
 
-            <ul className="list-disc pl-6 space-y-2 mb-4">
-              <li>Participants accept these Terms and Conditions.</li>
-              <li>
-                Participants consent to Graphura handling their personal data
-                for hackathon-related purposes.
-              </li>
-              <li>
-                Participants consent to their data being shared with Graphura’s
-                event partners, sponsors, and co-organizers as required.
-              </li>
-            </ul>
+            <div className="space-y-2 mb-4">
+              <p><strong>3.2.1</strong> Participants accept these Terms and Conditions.</p>
+              <p><strong>3.2.2</strong> Participants consent to Graphura handling their personal data for hackathon-related purposes.</p>
+              <p><strong>3.2.3</strong> Participants consent to their data being shared with Graphura's event partners, sponsors, and co-organizers as required.</p>
+            </div>
 
             <h3 className="text-1xxl font-bold text-Black-700 mt-4 mb-3">
-              {" "}
-              3.2.1 Warranty
+              3.2.4 Warranty
             </h3>
             <p className="mt-2 mb-2">
               Participants represent and warrant that their submission or
               application does not violate any agreement regarding:
             </p>
-            <ul className="list-disc pl-6 space-y-2 mb-4">
-              <li>Confidentiality</li>
-              <li>Employment obligations</li>
-              <li>Intellectual property assignment</li>
-              <li>Non-competition</li>
-              <li>Any other binding contractual or legal obligation</li>
-            </ul>
+            <div className="space-y-2 mb-4">
+              <p><strong>3.2.4.1</strong> Confidentiality</p>
+              <p><strong>3.2.4.2</strong> Employment obligations</p>
+              <p><strong>3.2.4.3</strong> Intellectual property assignment</p>
+              <p><strong>3.2.4.4</strong> Non-competition</p>
+              <p><strong>3.2.4.5</strong> Any other binding contractual or legal obligation</p>
+            </div>
 
             <h3 className="text-2xl font-bold text-yellow-600 mt-4 mb-3">
               3.3 Team Requirements
@@ -224,8 +215,7 @@ const TermsCondition = () => {
             <p className="mt-2 mb-2">
               Graphura will review applications based on merit, relevance, and
               available seats. Selected teams will receive confirmation up to{" "}
-              <strong>three weeks or less</strong> three weeks or less before
-              the event start date.
+              <strong>three weeks or less</strong> before the event start date.
             </p>
 
             <h3 className="text-2xl font-bold text-yellow-600 mt-4 mb-3">
@@ -235,11 +225,11 @@ const TermsCondition = () => {
               Graphura must be informed of changes in team composition. Failure
               to do so may result in:
             </p>
-            <ul className="list-disc pl-6 space-y-2 mb-4">
-              <li>Communication delays</li>
-              <li>Missed instructions</li>
-              <li>Possible disqualification</li>
-            </ul>
+            <div className="space-y-2 mb-4">
+              <p><strong>3.5.1</strong> Communication delays</p>
+              <p><strong>3.5.2</strong> Missed instructions</p>
+              <p><strong>3.5.3</strong> Possible disqualification</p>
+            </div>
 
             <h3 className="text-2xl font-bold text-yellow-600 mt-4 mb-3">
               3.6 Conduct
@@ -249,11 +239,11 @@ const TermsCondition = () => {
               <strong>Graphura Code of Conduct</strong>. Violations may result
               in:
             </p>
-            <ul className="list-disc pl-6 space-y-2 mb-4">
-              <li>Disqualification</li>
-              <li>Removal from the event or communication channels</li>
-              <li>Removal from Graphura’s community spaces</li>
-            </ul>
+            <div className="space-y-2 mb-4">
+              <p><strong>3.6.1</strong> Disqualification</p>
+              <p><strong>3.6.2</strong> Removal from the event or communication channels</p>
+              <p><strong>3.6.3</strong> Removal from Graphura's community spaces</p>
+            </div>
 
             <h3 className="text-2xl font-bold text-yellow-600 mt-4 mb-3">
               3.7 Equipment & Facilities
@@ -266,14 +256,14 @@ const TermsCondition = () => {
               3.7.1 For Physical Events
             </h3>
             <p className="mt-2 mb-2">Graphura or its partners may provide:</p>
-            <ul className="list-disc pl-6 space-y-2 mb-4">
-              <li>Workspaces</li>
-              <li>Seating and power supply</li>
-              <li>Wi-Fi/internet access</li>
-              <li>Monitors/screens (as available)</li>
-              <li>Restroom access</li>
-              <li>Light refreshments (optional)</li>
-            </ul>
+            <div className="space-y-2 mb-4">
+              <p><strong>3.7.1.1</strong> Workspaces</p>
+              <p><strong>3.7.1.2</strong> Seating and power supply</p>
+              <p><strong>3.7.1.3</strong> Wi-Fi/internet access</p>
+              <p><strong>3.7.1.4</strong> Monitors/screens (as available)</p>
+              <p><strong>3.7.1.5</strong> Restroom access</p>
+              <p><strong>3.7.1.6</strong> Light refreshments (optional)</p>
+            </div>
             <p className="mt-2 mb-2">
               Accessibility considerations will be provided to the extent
               reasonably possible.
@@ -283,22 +273,23 @@ const TermsCondition = () => {
               3.7.2 For Remote Events
             </h3>
             <p className="mt-2 mb-2">Graphura or partners will provide:</p>
-            <ul className="list-disc pl-6 space-y-2 mb-4">
-              <li>Online meeting links</li>
-              <li>Communication channels (Slack, Discord, etc.)</li>
-            </ul>
+            <div className="space-y-2 mb-4">
+              <p><strong>3.7.2.1</strong> Online meeting links</p>
+              <p><strong>3.7.2.2</strong> Communication channels (Slack, Discord, etc.)</p>
+            </div>
 
             <h3 className="text-2xl font-bold text-yellow-600 mt-4 mb-3">
               3.8 Employee Participation
             </h3>
             <p className="mt-2 mb-2">
               Graphura employees may participate but{" "}
-              <strong> cannot win cash or monetary prizes.</strong>
+              <strong>cannot win cash or monetary prizes.</strong>
             </p>
           </div>
 
+
           {/* 4 */}
-          <div>
+                    <div>
             <h2 className="text-3xl font-bold text-[#03594E] mb-3">
               4. Registration for the Hackathon
             </h2>
@@ -309,7 +300,7 @@ const TermsCondition = () => {
             <p className="mt-2 mb-2">
               Accepted teams must complete a registration/confirmation form. By
               registering, participants consent to data processing under
-              Graphura’s Privacy Policy and the policies of event partners.
+              Graphura's Privacy Policy and the policies of event partners.
             </p>
 
             <h3 className="text-2xl font-bold text-yellow-600 mt-4 mb-3">
@@ -335,29 +326,20 @@ const TermsCondition = () => {
               Participants must ensure that any ideas, prototypes, or work
               submitted:
             </p>
-            <ul className="list-disc pl-6 space-y-2 mb-4">
-              <li>Are original</li>
-              <li>Do not violate third-party rights</li>
-              <li>
-                Do not include confidential or proprietary information without
-                authorization
-              </li>
-            </ul>
+            <div className="space-y-2 mb-4">
+              <p><strong>4.4.1</strong> Are original</p>
+              <p><strong>4.4.2</strong> Do not violate third-party rights</p>
+              <p><strong>4.4.3</strong> Do not include confidential or proprietary information without authorization</p>
+            </div>
 
             <h3 className="text-2xl font-bold text-yellow-600 mt-4 mb-3">
               4.5 Liability
             </h3>
             <p className="mt-2 mb-2">For physical events:</p>
-            <ul className="list-disc pl-6 space-y-2 mb-4">
-              <li>
-                Participants are responsible for damages caused to people or
-                property.
-              </li>
-              <li>
-                Graphura is not responsible for loss, theft, or damage to
-                personal belongings.
-              </li>
-            </ul>
+            <div className="space-y-2 mb-4">
+              <p><strong>4.5.1</strong> Participants are responsible for damages caused to people or property.</p>
+              <p><strong>4.5.2</strong> Graphura is not responsible for loss, theft, or damage to personal belongings.</p>
+            </div>
 
             <h3 className="text-2xl font-bold text-yellow-600 mt-4 mb-3">
               4.6 Right to Refuse Entry
@@ -368,10 +350,10 @@ const TermsCondition = () => {
             </p>
           </div>
 
+
           {/* 5 */}
-          <div>
+           <div>
             <h2 className="text-3xl font-bold text-[#03594E] mb-3">
-              {" "}
               5. Hackathon Winners
             </h2>
 
@@ -397,17 +379,15 @@ const TermsCondition = () => {
             <p className="mt-2 mb-2">
               Winning a prize does <strong>not</strong>:
             </p>
-            <ul className="list-disc pl-6 space-y-2 mb-4">
-              <li>Create a contract</li>
-              <li>Guarantee employment</li>
-              <li>
-                Create any ongoing obligation between Graphura and participants
-              </li>
-            </ul>
+            <div className="space-y-2 mb-4">
+              <p><strong>5.3.1</strong> Create a contract</p>
+              <p><strong>5.3.2</strong> Guarantee employment</p>
+              <p><strong>5.3.3</strong> Create any ongoing obligation between Graphura and participants</p>
+            </div>
           </div>
 
           {/* 6 */}
-          <div>
+           <div>
             <h2 className="text-3xl font-bold text-[#03594E] mb-3">
               6. Intellectual Property Rights
             </h2>
@@ -416,16 +396,10 @@ const TermsCondition = () => {
               6.1 Participant Warranties
             </h3>
             <p className="mt-2 mb-2">By participating, each participant:</p>
-            <ul className="list-disc pl-6 space-y-2 mb-4">
-              <li>
-                Declares that their submission does not violate third-party IP
-                rights
-              </li>
-              <li>
-                Agrees to indemnify Graphura from claims arising from IP
-                violations
-              </li>
-            </ul>
+            <div className="space-y-2 mb-4">
+              <p><strong>6.1.1</strong> Declares that their submission does not violate third-party IP rights</p>
+              <p><strong>6.1.2</strong> Agrees to indemnify Graphura from claims arising from IP violations</p>
+            </div>
 
             <h3 className="text-2xl font-bold text-yellow-600 mt-4 mb-3">
               6.2 Definition of IP
@@ -433,13 +407,13 @@ const TermsCondition = () => {
             <p className="mt-2 mb-2">
               Intellectual Property includes (but is not limited to):
             </p>
-            <ul className="list-disc pl-6 space-y-2 mb-4">
-              <li>Ideas, concepts, and know-how</li>
-              <li>Patents, copyrights, designs</li>
-              <li>Software, source code, documentation</li>
-              <li>Algorithms, prototypes, models</li>
-              <li>Data processing techniques</li>
-            </ul>
+            <div className="space-y-2 mb-4">
+              <p><strong>6.2.1</strong> Ideas, concepts, and know-how</p>
+              <p><strong>6.2.2</strong> Patents, copyrights, designs</p>
+              <p><strong>6.2.3</strong> Software, source code, documentation</p>
+              <p><strong>6.2.4</strong> Algorithms, prototypes, models</p>
+              <p><strong>6.2.5</strong> Data processing techniques</p>
+            </div>
 
             <h3 className="text-2xl font-bold text-yellow-600 mt-4 mb-3">
               6.3 Moral Rights

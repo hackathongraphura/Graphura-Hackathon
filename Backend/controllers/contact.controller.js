@@ -41,7 +41,7 @@ export const subscribeNewsletter = async (req, res) => {
 
     res.status(201).json({
       success: true,
-      message: "Subscribed successfully 🎉",
+      message: "Subscribed successfully",
       data: subscriber
     });
   } catch (error) {

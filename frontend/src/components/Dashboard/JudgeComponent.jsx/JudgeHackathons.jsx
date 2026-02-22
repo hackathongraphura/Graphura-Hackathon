@@ -28,7 +28,7 @@ const JudgeHackathons = ({ setActive, setSelectedHackathon }) => {
               setSelectedHackathon(h._id);
               setActive("participants");
             }}
-            className="mt-2 px-4 py-2 bg-blue-500 text-white rounded"
+            className="mt-2 px-4 py-2 bg-blue-500 cursor-pointer text-white rounded"
           >
             View Participants
           </button>

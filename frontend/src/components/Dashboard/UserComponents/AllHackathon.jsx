@@ -449,7 +449,7 @@ const ExploreEvents = () => {
                         setSelectedId(h._id);
                         setOpen(true);
                       }}
-                      className="px-6 py-3 rounded-xl text-sm font-semibold transition-all hover:shadow-lg hover:scale-105"
+                      className="px-6 cursor-pointer py-3 rounded-xl text-sm font-semibold transition-all hover:shadow-lg hover:scale-105"
                       style={{ backgroundColor: "#03594E", color: "#fff" }}
                     >
                       View Details & Register

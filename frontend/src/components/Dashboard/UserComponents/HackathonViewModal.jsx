@@ -112,7 +112,7 @@ const HackathonViewModal = ({ hackathonId, onClose }) => {
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur rounded-full flex items-center justify-center hover:bg-white transition-all shadow-lg"
+            className="absolute cursor-pointer top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur rounded-full flex items-center justify-center hover:bg-white transition-all shadow-lg"
           >
             <X size={20} />
           </button>
@@ -450,7 +450,7 @@ const HackathonViewModal = ({ hackathonId, onClose }) => {
               <button
                 onClick={handleRegister}
                 disabled={registering || hackathon.status === "completed" || (daysRemaining !== null && daysRemaining <= 0)}
-                className={`flex-1 py-4 rounded-xl font-bold text-lg flex justify-center items-center gap-3 transition-all ${
+                className={`flex-1 py-4 rounded-xl cursor-pointer font-bold text-lg flex justify-center items-center gap-3 transition-all ${
                   registering || hackathon.status === "completed" || (daysRemaining !== null && daysRemaining <= 0)
                     ? "bg-gray-300 text-gray-500 cursor-not-allowed"
                     : "bg-gradient-to-r from-[#03594E] to-[#1AB69D] text-white hover:shadow-xl hover:scale-[1.02] active:scale-95"

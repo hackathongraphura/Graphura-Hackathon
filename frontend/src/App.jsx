@@ -13,7 +13,6 @@ import AllBlog from "./components/Blog/AllBlog";
 import Hackathon from "./components/Hackathon/Hackathon";
 import HackathonDetail from "./components/Hackathon/HackathonDetail";
 import SlidingAuthPage from "./components/Auth/Login";
-import Signup from "./components/Auth/Signup";
 import OAuthSuccess from "./components/Auth/OAuthSuccess";
 
 import AdminDashboard from "./components/Dashboard/Dashboard";
@@ -125,14 +124,6 @@ function App() {
           element={
             <PublicRoute>
               <SlidingAuthPage />
-            </PublicRoute>
-          }
-        />
-        <Route
-          path="/signup"
-          element={
-            <PublicRoute>
-              <Signup />
             </PublicRoute>
           }
         />

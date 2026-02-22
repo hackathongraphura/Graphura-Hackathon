@@ -3,7 +3,6 @@ import { Play, Users, BookOpen, Award } from "lucide-react";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 
-
 const PrivacyPolicy = () => {
   return (
     <section className="relative overflow-hidden">
@@ -69,25 +68,28 @@ const PrivacyPolicy = () => {
               are asked to submit:
             </p>
 
-            <ul className="list-disc pl-6 mt-3 space-y-2">
-              <li>Your name, so we know what to call you.</li>
-              <li>
-                Your email address and phone number, so we know how to reach
-                you.
-              </li>
-              <li>
-                Your nationality, so we can determine the visa rules applicable
-                in the location of your program/internship host company.
-              </li>
-              <li>
-                Your university, so we know if you attend a partner university
-                and may be eligible for a program discount.
-              </li>
-              <li>
-                Your CV/resume, so we can place you in a suitable internship
-                role.
-              </li>
-            </ul>
+            <div className="mt-3 space-y-2">
+              <p>
+                <strong>1.1</strong> Your name, so we know what to call you.
+              </p>
+              <p>
+                <strong>1.2</strong> Your email address and phone number, so we
+                know how to reach you.
+              </p>
+              <p>
+                <strong>1.3</strong> Your nationality, so we can determine the
+                visa rules applicable in the location of your program/internship
+                host company.
+              </p>
+              <p>
+                <strong>1.4</strong> Your university, so we know if you attend a
+                partner university and may be eligible for a program discount.
+              </p>
+              <p>
+                <strong>1.5</strong> Your CV/resume, so we can place you in a
+                suitable internship role.
+              </p>
+            </div>
 
             <p className="mt-4">
               When you interview with us, and if you choose to participate in
@@ -217,14 +219,26 @@ const PrivacyPolicy = () => {
               7. What rights do you have?
             </h2>
 
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Right to be informed</li>
-              <li>Right of access</li>
-              <li>Right to amend</li>
-              <li>Right to be erased</li>
-              <li>Right to stop receiving marketing messages</li>
-              <li>Right to restrict processing</li>
-            </ul>
+            <div className="space-y-2">
+              <p>
+                <strong>7.1</strong> Right to be informed
+              </p>
+              <p>
+                <strong>7.2</strong> Right of access
+              </p>
+              <p>
+                <strong>7.3</strong> Right to amend
+              </p>
+              <p>
+                <strong>7.4</strong> Right to be erased
+              </p>
+              <p>
+                <strong>7.5</strong> Right to stop receiving marketing messages
+              </p>
+              <p>
+                <strong>7.6</strong> Right to restrict processing
+              </p>
+            </div>
           </div>
 
           {/* 8 */}

@@ -278,7 +278,7 @@ const Profile = () => {
             {!isEditing && (
               <button
                 onClick={() => setIsEditing(true)}
-                className="mt-6 w-full py-3 bg-gradient-to-br from-[#03594E] via-[#03594E] to-[#1AB69D] text-white rounded-xl flex items-center justify-center gap-2 font-bold shadow-lg hover:scale-105 transition-transform"
+                className="mt-6 w-full py-3 cursor-pointer bg-gradient-to-br from-[#03594E] via-[#03594E] to-[#1AB69D] text-white rounded-xl flex items-center justify-center gap-2 font-bold shadow-lg hover:scale-105 transition-transform"
               >
                 <Edit2 size={18} />
                 Edit Profile
@@ -453,7 +453,7 @@ const Profile = () => {
                   <button
                     onClick={handleSubmit}
                     disabled={loading}
-                    className="flex-1 py-3 bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-xl flex items-center justify-center gap-2 font-bold shadow-lg hover:scale-105 transition-transform disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                    className="flex-1 py-3 cursor-pointer bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-xl flex items-center justify-center gap-2 font-bold shadow-lg hover:scale-105 transition-transform disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                   >
                     {loading ? (
                       <>
