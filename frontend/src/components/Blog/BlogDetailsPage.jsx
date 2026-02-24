@@ -198,7 +198,7 @@ const BlogDetails = () => {
       {/* ================= HERO ================= */}
       <section className="bg-gradient-to-br from-[#03594E] via-[#03594E] to-[#1AB69D] py-32 text-center text-white">
         <p className="text-sm mb-4">Home → Blog → {blog.title}</p>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold leading-tight mx-auto px-10 lg:px-25">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold leading-tight mx-auto px-10 lg:px-50">
           {blog.title}
         </h1>
       </section>
