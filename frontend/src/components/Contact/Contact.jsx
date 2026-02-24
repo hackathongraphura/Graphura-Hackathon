@@ -13,9 +13,24 @@ const ContactUs = () => {
   });
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    // If field is phone, allow only numbers
+    if (name === "phone") {
+      const numericValue = value.replace(/[^0-9]/g, "");
+
+      setFormData({
+        ...formData,
+        [name]: numericValue,
+      });
+
+      return;
+    }
+
+    // For other inputs (normal behavior)
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
   };
 
