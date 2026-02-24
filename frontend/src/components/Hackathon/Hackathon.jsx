@@ -129,14 +129,26 @@ const Hackathon = () => {
     setCurrentPage(1);
   }, [active, searchTerm, range]);
 
-  if (loading)
-    return (
-      <div className="flex justify-center items-center min-h-[60vh]">
-        <div className="w-12 h-12 border-4 border-yellow-400 border-t-transparent rounded-full animate-spin"></div>
-      </div>
-    );
+if (loading)
+  return (
+    <div className="flex justify-center items-center min-h-[60vh]">
+      <div className="w-12 h-12 border-4 border-yellow-400 border-t-transparent rounded-full animate-spin"></div>
+    </div>
+  );
 
-  if (!data) return <p>Hackathon not found</p>;
+if (!data)
+  return (
+    <div className="flex flex-col justify-center items-center min-h-[60vh] text-center">
+
+      <p className="text-xl font-semibold text-gray-700">
+        Hackathon Not Found
+      </p>
+
+      <p className="text-sm text-gray-500 mt-1">
+        The hackathon you are looking for doesn’t exist.
+      </p>
+    </div>
+  );
 
   return (
     <div className="overflow-x-hidden">
