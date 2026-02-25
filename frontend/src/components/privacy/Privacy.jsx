@@ -26,10 +26,6 @@ const PrivacyPolicy = () => {
             </span>
           </p>
 
-          <p className="mt-2 text-white/70 text-sm">
-            Last Updated: June 20, 2025
-          </p>
-
           <p className="mt-6 text-white/80 text-base sm:text-lg leading-relaxed">
             Graphura India Private Limited values individuals&apos; privacy and
             actively seeks to preserve the privacy rights of those who share
